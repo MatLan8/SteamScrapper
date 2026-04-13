@@ -1,0 +1,97 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.field input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.field input[type="number"]::-webkit-outer-spin-button,
+.field input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.infoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: help;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.infoIcon:hover {
+  color: var(--foreground);
+}
+
+.infoSvg {
+  width: 14px;
+  height: 14px;
+}
+
+.req {
+  color: var(--destructive);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--input);
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  resize: vertical;
+}
+
+.textarea:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.selectTrigger {
+  width: 100%;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: var(--destructive);
+  margin: 0;
+}
+
+.checkRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.checkTitle {
+  font-weight: 500;
+  color: var(--foreground);
+}

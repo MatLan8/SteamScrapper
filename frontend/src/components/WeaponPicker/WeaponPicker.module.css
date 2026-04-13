@@ -1,0 +1,75 @@
+.root {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+  margin: 0.75rem 0;
+}
+
+.category:first-of-type .divider:first-child {
+  margin-top: 0;
+}
+
+.category {
+  width: 100%;
+}
+
+.categoryLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.buttonRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.btn {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: color-mix(in oklch, var(--primary) 40%, var(--border));
+}
+
+.btnSelected {
+  background: oklch(0.65 0.15 230);
+  color: oklch(0.99 0 0);
+  border-color: oklch(0.55 0.14 230);
+}
+
+.btnSelected:hover {
+  background: oklch(0.6 0.16 230);
+  border-color: oklch(0.5 0.15 230);
+}

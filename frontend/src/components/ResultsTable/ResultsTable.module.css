@@ -1,0 +1,26 @@
+.wrap {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.rowNumHead,
+.rowNumCell {
+  width: 2.5rem;
+  max-width: 2.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+}
+
+.sortBtn {
+  height: auto;
+  padding: 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+.arrow {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}

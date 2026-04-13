@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.navWrap {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 10vw 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+/* PillNav ships with position:absolute; keep bar in flow and centered */
+.navWrap :global(.pill-nav-container) {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  z-index: 10;
+}
+
+.pillNav {
+  max-width: 100%;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 80vw;
+  margin-inline: auto;
+  padding: 1.25rem 0 2.5rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .navWrap {
+    padding-left: max(1rem, 5vw);
+    padding-right: max(1rem, 5vw);
+  }
+
+  .main {
+    max-width: 100%;
+    padding: 1rem 5vw 2rem;
+  }
+}
