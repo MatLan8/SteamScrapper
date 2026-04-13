@@ -45,6 +45,10 @@ export function emitProgress(jobId, event) {
     };
   }
 
+  if (event.type === "skin:pre-skipped") {
+    job.progress.skippedSkins += 1;
+  }
+
   if (event.type === "skin:done") {
     job.progress.completedSkins += 1;
     if (event.status === "skipped") job.progress.skippedSkins += 1;

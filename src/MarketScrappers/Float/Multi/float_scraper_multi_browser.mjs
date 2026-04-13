@@ -83,9 +83,8 @@ export async function runFloatMultiWeapon(args) {
       );
       for (const s of preSkipped) {
         args.onProgress?.({
-          type: "skin:done",
+          type: "skin:pre-skipped",
           marketHashName: s.marketHashName,
-          status: "skipped",
           reason: s.reason,
         });
       }
