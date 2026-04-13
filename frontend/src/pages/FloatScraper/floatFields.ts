@@ -39,7 +39,8 @@ export const MULTI_BROWSER_FIELDS: FieldConfig[] = [
     name: "top",
     label: "Top per skin",
     type: "number",
-    helpText: "How many top floats to keep per weapon skin before global merge.",
+    helpText:
+      "How many top floats to keep per weapon skin before global merge.",
     defaultValue: 10,
   },
   {

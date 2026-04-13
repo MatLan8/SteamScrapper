@@ -3,7 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArgumentsForm } from "@/components/ArgumentsForm/ArgumentsForm";
 import { ProgressPanel } from "@/components/ProgressPanel/ProgressPanel";
-import { ResultsTable, type ColumnDef } from "@/components/ResultsTable/ResultsTable";
+import {
+  ResultsTable,
+  type ColumnDef,
+} from "@/components/ResultsTable/ResultsTable";
 import { ScraperMethodSelector } from "@/components/ScraperMethodSelector/ScraperMethodSelector";
 import { ScraperModeSelector } from "@/components/ScraperModeSelector/ScraperModeSelector";
 import { StatusBadge } from "@/components/StatusBadge/StatusBadge";
@@ -16,8 +19,16 @@ import {
   type ResultRow,
 } from "@/lib/floatResultRows";
 import { steamListingUrl } from "@/lib/steamLinks";
-import { validateFloatMultiArgs, validateSingleUrlArgs } from "@/lib/validation";
-import type { FloatMultiResults, FloatSingleResults, ScraperMethod, ScraperMode } from "@/types";
+import {
+  validateFloatMultiArgs,
+  validateSingleUrlArgs,
+} from "@/lib/validation";
+import type {
+  FloatMultiResults,
+  FloatSingleResults,
+  ScraperMethod,
+  ScraperMode,
+} from "@/types";
 import {
   defaultsFromFields,
   MULTI_BROWSER_FIELDS,
@@ -71,7 +82,8 @@ function buildMultiBody(
     body.maxSkins = Number(v.maxSkins);
   if (v.maxListingsPerSkin !== "" && v.maxListingsPerSkin != null)
     body.maxListingsPerSkin = Number(v.maxListingsPerSkin);
-  if (v.maxPrice !== "" && v.maxPrice != null) body.maxPrice = Number(v.maxPrice);
+  if (v.maxPrice !== "" && v.maxPrice != null)
+    body.maxPrice = Number(v.maxPrice);
   return body;
 }
 
@@ -91,7 +103,8 @@ function buildSingleBody(
   if (c) body.cookie = c;
   if (!playwright) body.currency = Number(v.currency ?? 3);
   body.headful = playwright ? Boolean(v.headful) : false;
-  if (v.maxPrice !== "" && v.maxPrice != null) body.maxPrice = Number(v.maxPrice);
+  if (v.maxPrice !== "" && v.maxPrice != null)
+    body.maxPrice = Number(v.maxPrice);
   return body;
 }
 
@@ -102,11 +115,14 @@ type FieldsProps = {
   startJob: (path: string, body: Record<string, unknown>) => Promise<unknown>;
 };
 
-function FloatScraperFields({ mode, method, runDisabled, startJob }: FieldsProps) {
+function FloatScraperFields({
+  mode,
+  method,
+  runDisabled,
+  startJob,
+}: FieldsProps) {
   const fields = useMemo(() => pickFields(mode, method), [mode, method]);
-  const [values, setValues] = useState(() =>
-    defaultsFromFields(fields),
-  );
+  const [values, setValues] = useState(() => defaultsFromFields(fields));
   const [weapon, setWeapon] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -145,8 +161,8 @@ function FloatScraperFields({ mode, method, runDisabled, startJob }: FieldsProps
   if (mode === "multi" && method === "endpoint") {
     return (
       <p className={styles.placeholder}>
-        Float multi via endpoint is not implemented yet. Switch to Browser or use
-        Single mode.
+        Float multi via endpoint is not implemented yet. Switch to Browser or
+        use Single mode.
       </p>
     );
   }
@@ -201,8 +217,7 @@ export default function FloatScraper() {
   const runDisabled =
     (mode === "multi" && method === "endpoint") || job.status === "running";
 
-  const hasFinished =
-    job.status === "completed" || job.status === "failed";
+  const hasFinished = job.status === "completed" || job.status === "failed";
 
   const isRunning = job.status === "running";
 
@@ -224,7 +239,11 @@ export default function FloatScraper() {
   }, [job.results, job.status, job.args, job.jobType]);
 
   const multiFailedSkipped = useMemo(() => {
-    if (!job.results || job.status !== "completed" || !job.jobType?.includes("multi")) {
+    if (
+      !job.results ||
+      job.status !== "completed" ||
+      !job.jobType?.includes("multi")
+    ) {
       return null;
     }
     const r = job.results as FloatMultiResults;
@@ -307,8 +326,7 @@ export default function FloatScraper() {
   }, [job.jobType]);
 
   const showProgress =
-    job.status !== "idle" &&
-    (job.status === "running" || job.log.length > 0);
+    job.status !== "idle" && (job.status === "running" || job.log.length > 0);
 
   const showResultsColumn = hasFinished;
 
@@ -374,7 +392,11 @@ export default function FloatScraper() {
 
               {job.status !== "idle" && job.status !== "running" ? (
                 <div className={styles.actions}>
-                  <Button type="button" variant="outline" onClick={() => job.reset()}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => job.reset()}
+                  >
                     Clear
                   </Button>
                 </div>
@@ -401,16 +423,24 @@ export default function FloatScraper() {
             </p>
           ) : null}
 
-          {job.status === "completed" && multiFailedSkipped?.failedSkins.length ? (
-            <Card className={`${styles.card} ${styles.outcomeCard} ${styles.outcomeCardFailed}`}>
+          {job.status === "completed" &&
+          multiFailedSkipped?.failedSkins.length ? (
+            <Card
+              className={`${styles.card} ${styles.outcomeCard} ${styles.outcomeCardFailed}`}
+            >
               <CardHeader>
                 <CardTitle>Failed skins</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className={styles.outcomeList}>
                   {multiFailedSkipped.failedSkins.map((f, i) => (
-                    <li key={`fail-${f.marketHashName}-${i}`} className={styles.outcomeItem}>
-                      <span className={styles.outcomeName}>{f.marketHashName}</span>
+                    <li
+                      key={`fail-${f.marketHashName}-${i}`}
+                      className={styles.outcomeItem}
+                    >
+                      <span className={styles.outcomeName}>
+                        {f.marketHashName}
+                      </span>
                       <span className={styles.outcomeReason}>{f.error}</span>
                     </li>
                   ))}
@@ -419,19 +449,29 @@ export default function FloatScraper() {
             </Card>
           ) : null}
 
-          {job.status === "completed" && multiFailedSkipped?.skippedSkins.length ? (
-            <Card className={`${styles.card} ${styles.outcomeCard} ${styles.outcomeCardSkipped}`}>
+          {job.status === "completed" &&
+          multiFailedSkipped?.skippedSkins.length ? (
+            <Card
+              className={`${styles.card} ${styles.outcomeCard} ${styles.outcomeCardSkipped}`}
+            >
               <CardHeader>
                 <CardTitle>Skipped skins</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className={styles.outcomeList}>
                   {multiFailedSkipped.skippedSkins.map((s, i) => (
-                    <li key={`skip-${s.marketHashName}-${i}`} className={styles.outcomeItem}>
-                      <span className={styles.outcomeName}>{s.marketHashName}</span>
+                    <li
+                      key={`skip-${s.marketHashName}-${i}`}
+                      className={styles.outcomeItem}
+                    >
+                      <span className={styles.outcomeName}>
+                        {s.marketHashName}
+                      </span>
                       <span className={styles.outcomeReason}>
                         {s.reason ?? "—"}
-                        {s.totalCount != null ? ` (${s.totalCount} listings)` : ""}
+                        {s.totalCount != null
+                          ? ` (${s.totalCount} listings)`
+                          : ""}
                       </span>
                     </li>
                   ))}

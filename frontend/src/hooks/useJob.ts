@@ -237,8 +237,7 @@ function mergeProgressFromEvent(
       ...prev,
       currentSkin: {
         ...prev.currentSkin,
-        marketHashName:
-          ev.marketHashName ?? prev.currentSkin?.marketHashName,
+        marketHashName: ev.marketHashName ?? prev.currentSkin?.marketHashName,
         currentPage: ev.currentPage,
         totalPages: ev.totalPages,
         workerIndex: ev.workerIndex ?? prev.currentSkin?.workerIndex,
