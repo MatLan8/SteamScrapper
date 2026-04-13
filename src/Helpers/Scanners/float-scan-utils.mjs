@@ -281,13 +281,8 @@ export async function floatScanSkinPage(page, marketHashName, args, workerLabel)
       );
     }
 
-    // #region agent log
-    fetch('http://127.0.0.1:7886/ingest/4e27bff3-ffff-4c42-9349-997b4cf16f56',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'af75e4'},body:JSON.stringify({sessionId:'af75e4',location:'float-scan-utils.mjs:284',message:'skip threshold check',data:{marketHashName,totalCount:meta.totalCount,maxListingsPerSkin:args.maxListingsPerSkin,SKIP_LISTING_THRESHOLD,condResult:!args.maxListingsPerSkin&&meta.totalCount>SKIP_LISTING_THRESHOLD},timestamp:Date.now(),hypothesisId:'H3'})}).catch(()=>{});
-    // #endregion
-    if (
-      !args.maxListingsPerSkin &&
-      meta.totalCount > SKIP_LISTING_THRESHOLD
-    ) {
+    const effectiveThreshold = args.maxListingsPerSkin ?? SKIP_LISTING_THRESHOLD;
+    if (meta.totalCount > effectiveThreshold) {
       return {
         marketHashName,
         skinName: extractSkinNameParts(marketHashName).skinName,
@@ -298,7 +293,7 @@ export async function floatScanSkinPage(page, marketHashName, args, workerLabel)
         topResults: [],
         cheapestListing: null,
         skipped: true,
-        skippedReason: `Skipped because listing count ${meta.totalCount} is greater than ${SKIP_LISTING_THRESHOLD}`,
+        skippedReason: `Skipped because listing count ${meta.totalCount} is greater than ${effectiveThreshold}`,
         totalCount: meta.totalCount,
       };
     }

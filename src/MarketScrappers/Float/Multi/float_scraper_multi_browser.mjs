@@ -41,10 +41,6 @@ export async function runFloatMultiWeapon(args) {
   const rawSkins = await fetchFloatWeaponSkinSearchResults(args, searchHeaders);
   console.log(`Found ${rawSkins.length} matching skins.`);
 
-  // #region agent log
-  fetch('http://127.0.0.1:7886/ingest/4e27bff3-ffff-4c42-9349-997b4cf16f56',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'af75e4'},body:JSON.stringify({sessionId:'af75e4',location:'float_scraper_multi_browser.mjs:42',message:'raw search results sample',data:{count:rawSkins.length,maxListingsPerSkin:args.maxListingsPerSkin,firstSkinKeys:rawSkins[0]?Object.keys(rawSkins[0]):[],firstSkinSellListings:rawSkins[0]?.sell_listings,firstSkinName:rawSkins[0]?.hash_name,sampleListingCounts:rawSkins.slice(0,5).map(r=>({name:r.hash_name,sell_listings:r.sell_listings}))},timestamp:Date.now(),hypothesisId:'H1+H2'})}).catch(()=>{});
-  // #endregion
-
   let skinResults = rawSkins.map((r) => ({
     ...r,
     marketHashName: String(r.hash_name ?? r.market_hash_name ?? ""),
@@ -65,6 +61,37 @@ export async function runFloatMultiWeapon(args) {
     }
   }
 
+  const listingThreshold = args.maxListingsPerSkin ?? SKIP_LISTING_THRESHOLD;
+  const preSkipped = [];
+  {
+    const before = skinResults.length;
+    skinResults = skinResults.filter((r) => {
+      const count = Number(r.sell_listings ?? 0);
+      if (count > listingThreshold) {
+        preSkipped.push({
+          marketHashName: r.marketHashName,
+          totalCount: count,
+          reason: `Skipped because listing count ${count} is greater than ${listingThreshold}`,
+        });
+        return false;
+      }
+      return true;
+    });
+    if (preSkipped.length > 0) {
+      console.log(
+        `Skipped ${preSkipped.length} skins above listing threshold (${listingThreshold}). ${skinResults.length} skins remaining.`,
+      );
+      for (const s of preSkipped) {
+        args.onProgress?.({
+          type: "skin:done",
+          marketHashName: s.marketHashName,
+          status: "skipped",
+          reason: s.reason,
+        });
+      }
+    }
+  }
+
   const workerBuckets = splitItemsForWorkers(skinResults, args.workers);
 
   workerBuckets.forEach((bucket, idx) => {
@@ -80,9 +107,12 @@ export async function runFloatMultiWeapon(args) {
   const flattened = workerOutputs.flatMap((worker) => worker.results);
   flattened.sort((a, b) => a.originalIndex - b.originalIndex);
 
-  const allSkippedSkins = workerOutputs
-    .flatMap((worker) => worker.skippedSkins)
-    .sort((a, b) => a.originalIndex - b.originalIndex);
+  const allSkippedSkins = [
+    ...preSkipped,
+    ...workerOutputs
+      .flatMap((worker) => worker.skippedSkins)
+      .sort((a, b) => a.originalIndex - b.originalIndex),
+  ];
 
   const resultsInOriginalOrder = flattened.map((entry) => entry.result);
 
