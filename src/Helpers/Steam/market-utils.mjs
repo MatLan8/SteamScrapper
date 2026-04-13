@@ -1,6 +1,7 @@
 import {
   APPID,
   CURRENCY,
+  DEFAULT_LANGUAGE,
   SEARCH_PAGE_SIZE,
   SEARCH_URL,
   USER_AGENT,
@@ -182,7 +183,151 @@ export function getBasePriceCentsFromSearchResult(result) {
   return 0;
 }
 
-export async function fetchAllSkinSearchResults(args, headers) {
+function defaultStickerSearchMapResult(result) {
+  const marketHashName = String(
+    result.hash_name ?? result.market_hash_name ?? "",
+  );
+  const basePriceCents = getBasePriceCentsFromSearchResult(result);
+
+  return {
+    marketHashName,
+    listingUrl: buildListingPageUrl(marketHashName),
+    basePriceCents,
+    basePriceEuro: eurosFromUsdCents(basePriceCents),
+  };
+}
+
+/**
+ * Float multi search: single wear (fn|bs) and quality normal|st|sv (Souvenir).
+ */
+export function isWeaponSkinFloatSearchMatch(
+  result,
+  wantedWeapon,
+  wearConfig,
+  quality,
+) {
+  const marketHashName = String(
+    result.hash_name ?? result.market_hash_name ?? "",
+  );
+
+  if (!marketHashName.includes(" | ")) return false;
+  if (!marketHashName.endsWith(wearConfig.suffix)) return false;
+
+  const parts = extractSkinNameParts(marketHashName);
+
+  let normalizedWeaponName = parts.weaponName;
+
+  const hasStatTrak = normalizedWeaponName.startsWith("StatTrak™ ");
+  const hasSouvenir = normalizedWeaponName.startsWith("Souvenir ");
+
+  if (quality === "normal") {
+    if (hasStatTrak || hasSouvenir) return false;
+  } else if (quality === "st") {
+    if (!hasStatTrak || hasSouvenir) return false;
+    normalizedWeaponName = normalizedWeaponName.replace(/^StatTrak™\s+/, "");
+  } else if (quality === "sv") {
+    if (!hasSouvenir || hasStatTrak) return false;
+    normalizedWeaponName = normalizedWeaponName.replace(/^Souvenir\s+/, "");
+  }
+
+  return normalizedWeaponName === wantedWeapon;
+}
+
+/**
+ * Paginates market search for one weapon + one exterior tag + language (float scrapper).
+ */
+export async function fetchFloatWeaponSkinSearchResults(args, headers) {
+  const wearConfig = WEAR_MAP[args.wear];
+  const results = [];
+  let start = 0;
+  let totalCount = null;
+  const language = args.language ?? DEFAULT_LANGUAGE;
+
+  while (true) {
+    const payload = await fetchJson(
+      SEARCH_URL,
+      {
+        norender: 1,
+        query: args.weapon,
+        appid: APPID,
+        start,
+        count: SEARCH_PAGE_SIZE,
+        currency: CURRENCY,
+        l: language,
+        "category_730_Exterior[]": wearConfig.searchTag,
+      },
+      headers,
+    );
+
+    if (!payload || !Array.isArray(payload.results)) {
+      throw new Error(
+        "Unexpected market search payload: missing results array",
+      );
+    }
+
+    if (totalCount === null) {
+      totalCount = Number(payload.total_count ?? 0);
+    }
+
+    const filtered = payload.results.filter((result) =>
+      isWeaponSkinFloatSearchMatch(
+        result,
+        args.weapon,
+        wearConfig,
+        args.quality,
+      ),
+    );
+
+    results.push(...filtered);
+
+    debugLog(
+      args,
+      `Float search start=${start}: received ${payload.results.length}, kept ${filtered.length}, total_count=${totalCount}`,
+    );
+
+    start += Number(payload.pagesize ?? payload.results.length ?? 0);
+
+    if (payload.results.length === 0 || start >= totalCount) {
+      break;
+    }
+
+    await sleep(args.waitMs);
+  }
+
+  const deduped = new Map();
+
+  for (const result of results) {
+    const hashName = String(result.hash_name ?? result.market_hash_name ?? "");
+    if (!deduped.has(hashName)) {
+      deduped.set(hashName, result);
+    }
+  }
+
+  let finalResults = Array.from(deduped.values()).sort((a, b) => {
+    const an = String(a.hash_name ?? a.market_hash_name ?? "");
+    const bn = String(b.hash_name ?? b.market_hash_name ?? "");
+    return an.localeCompare(bn);
+  });
+
+  if (args.maxSkins && args.maxSkins > 0) {
+    finalResults = finalResults.slice(0, args.maxSkins);
+  }
+
+  return finalResults;
+}
+
+/**
+ * Optional `options.mapResult(result, args)` to replace default sticker row mapping.
+ * @param {object} args
+ * @param {HeadersInit} headers
+ * @param {{ mapResult?: (result: object, args: object) => object | null }} [options]
+ */
+export async function fetchAllSkinSearchResults(args, headers, options = {}) {
+  const mapResult =
+    typeof options.mapResult === "function"
+      ? options.mapResult
+      : defaultStickerSearchMapResult;
+
   const results = [];
   let start = 0;
   let totalCount = null;
@@ -203,6 +348,7 @@ export async function fetchAllSkinSearchResults(args, headers) {
         currency: CURRENCY,
         search_descriptions: 0,
         "category_730_Exterior[]": conditionTags,
+        ...(args.language ? { l: args.language } : {}),
       },
       headers,
     );
@@ -217,23 +363,17 @@ export async function fetchAllSkinSearchResults(args, headers) {
       totalCount = Number(payload.total_count ?? 0);
     }
 
-    const filtered = payload.results
-      .filter((result) =>
-        isMatchingWeaponSkin(result, args.weapon, conditionSet, args.quality),
-      )
-      .map((result) => {
-        const marketHashName = String(
-          result.hash_name ?? result.market_hash_name ?? "",
-        );
-        const basePriceCents = getBasePriceCentsFromSearchResult(result);
+    const filtered = [];
 
-        return {
-          marketHashName,
-          listingUrl: buildListingPageUrl(marketHashName),
-          basePriceCents,
-          basePriceEuro: eurosFromUsdCents(basePriceCents),
-        };
-      });
+    for (const result of payload.results) {
+      if (
+        !isMatchingWeaponSkin(result, args.weapon, conditionSet, args.quality)
+      ) {
+        continue;
+      }
+      const mapped = mapResult(result, args);
+      if (mapped) filtered.push(mapped);
+    }
 
     results.push(...filtered);
 

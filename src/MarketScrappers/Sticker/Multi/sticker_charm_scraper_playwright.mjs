@@ -4,7 +4,7 @@ import {
   CHARM_DB_PATH,
   STICKER_DB_PATH,
 } from "../../../Helpers/Config/constants.mjs";
-import { parseArgs } from "../../../Helpers/Cli/parse-args.mjs";
+import { parseWeaponSearchArgs } from "../../../Helpers/Cli/parse-args.mjs";
 import {
   loadCharmDb,
   loadStickerDb,
@@ -13,6 +13,7 @@ import {
   buildSearchHeaders,
   fetchAllSkinSearchResults,
 } from "../../../Helpers/Steam/market-utils.mjs";
+import { scanSkinPage } from "../../../Helpers/Scanners/sticker-charm-scan-utils.mjs";
 import {
   createMissingTracker,
   splitItemsForWorkers,
@@ -20,12 +21,12 @@ import {
 } from "../../../Helpers/Workers/worker-utils.mjs";
 import {
   sortListings,
-  writeWorkbook,
+  writeStickerWorkbook,
 } from "../../../Helpers/Output/excel-writer.mjs";
 import { sortedNumericStrings } from "../../../Helpers/utils/general.mjs";
 
 async function main() {
-  const args = parseArgs(process.argv);
+  const args = parseWeaponSearchArgs(process.argv);
   const searchHeaders = buildSearchHeaders(args.cookie);
   const missingTracker = createMissingTracker();
 
@@ -64,10 +65,17 @@ async function main() {
         idx,
         bucket,
         args,
-        stickerMap,
-        charmMap,
-        highlightReelMap,
-        missingTracker,
+        (page, skin, labelArgs, workerLabel) =>
+          scanSkinPage(
+            page,
+            skin,
+            labelArgs,
+            stickerMap,
+            charmMap,
+            highlightReelMap,
+            missingTracker,
+            workerLabel,
+          ),
       ),
     ),
   );
@@ -128,7 +136,7 @@ async function main() {
     console.log(sortedNumericStrings(missingTracker.highlightReels).join(", "));
   }
 
-  await writeWorkbook({
+  await writeStickerWorkbook({
     outputPath: args.out,
     topResults,
     processedSkins,

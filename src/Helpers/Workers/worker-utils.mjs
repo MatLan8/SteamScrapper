@@ -1,8 +1,4 @@
-import {
-  isRateLimitError,
-  setupBrowserContext,
-} from "../Steam/browser-utils.mjs";
-import { scanSkinPage } from "../Scanners/sticker-charm-scan-utils.mjs";
+import { isRateLimitError, setupBrowserContext } from "../Steam/browser-utils.mjs";
 import { sleep } from "../utils/general.mjs";
 
 export function splitItemsForWorkers(items, workerCount) {
@@ -42,20 +38,18 @@ export function addRemainingSkinsAsFailed(
   }
 }
 
-export async function workerRun(
-  workerIndex,
-  assignedSkins,
-  args,
-  stickerMap,
-  charmMap,
-  highlightReelMap,
-  missingTracker,
-) {
+/**
+ * @param {number} workerIndex
+ * @param {object[]} assignedSkins
+ * @param {object} args
+ * @param {(page: import('playwright').Page, skin: object, args: object, workerLabel: string) => Promise<object>} scanFn
+ */
+export async function workerRun(workerIndex, assignedSkins, args, scanFn) {
   const workerLabel = `[W${workerIndex + 1}]`;
   const processedSkins = [];
-  const skippedSkins = [];
   const workerListings = [];
   const failedSkins = [];
+  const skippedSkins = [];
 
   let browser = null;
   let context = null;
@@ -93,16 +87,7 @@ export async function workerRun(
       );
 
       try {
-        const scanned = await scanSkinPage(
-          page,
-          skin,
-          args,
-          stickerMap,
-          charmMap,
-          highlightReelMap,
-          missingTracker,
-          workerLabel,
-        );
+        const scanned = await scanFn(page, skin, args, workerLabel);
 
         processedSkins.push(skin.marketHashName);
 
@@ -117,10 +102,10 @@ export async function workerRun(
             `${workerLabel}   skipped by threshold: ${skin.marketHashName} (${scanned.totalCount})`,
           );
         } else {
-          workerListings.push(...scanned.scannedListings);
+          workerListings.push(...(scanned.scannedListings ?? []));
 
           console.log(
-            `${workerLabel}   scanned listings kept: ${scanned.scannedListings.length}`,
+            `${workerLabel}   scanned listings kept: ${(scanned.scannedListings ?? []).length}`,
           );
         }
       } catch (error) {

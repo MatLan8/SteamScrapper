@@ -40,7 +40,26 @@ export function sortListings(listings, sortBy) {
   });
 }
 
-export async function writeWorkbook({
+export function safeSheetName(name, usedNames) {
+  let clean = name.replace(/[\\/*?:[\]]/g, " ").trim();
+  if (!clean) clean = "Sheet";
+  clean = clean.slice(0, 31);
+
+  let finalName = clean;
+  let counter = 2;
+
+  while (usedNames.has(finalName)) {
+    const suffix = ` ${counter}`;
+    finalName = clean.slice(0, 31 - suffix.length) + suffix;
+    counter += 1;
+  }
+
+  usedNames.add(finalName);
+  return finalName;
+}
+
+/** Sticker/charm multi scan XLSX. */
+export async function writeStickerWorkbook({
   outputPath,
   topResults,
   processedSkins,
@@ -181,6 +200,73 @@ export async function writeWorkbook({
     },
   ]);
   summaryWs.getRow(1).font = { bold: true };
+
+  await workbook.xlsx.writeFile(path.resolve(outputPath));
+}
+
+/** @deprecated Use writeStickerWorkbook */
+export const writeWorkbook = writeStickerWorkbook;
+
+/**
+ * Float multi weapon scan: one sheet per skin (float / price).
+ * @param {{ outputPath: string, skinResults: object[], args: { mode: string, out: string } }} opts
+ */
+export async function writeFloatWorkbook({ outputPath, skinResults, args }) {
+  const workbook = new ExcelJS.Workbook();
+  const usedNames = new Set();
+
+  for (const skin of skinResults) {
+    const sheetName = safeSheetName(skin.marketHashName, usedNames);
+    const ws = workbook.addWorksheet(sheetName);
+
+    ws.columns = [
+      { header: "Skin", key: "skin", width: 42 },
+      { header: "Price", key: "price", width: 40 },
+      { header: "Float", key: "float", width: 18 },
+    ];
+
+    const rows = [...skin.topResults].sort((a, b) =>
+      args.mode === "highest"
+        ? b.floatValue - a.floatValue
+        : a.floatValue - b.floatValue,
+    );
+
+    if (skin.skipped) {
+      ws.addRow({
+        skin: skin.marketHashName,
+        price: skin.skippedReason,
+        float: "",
+      });
+    } else if (rows.length === 0) {
+      ws.addRow({
+        skin: skin.marketHashName,
+        price: skin.error ? `ERROR: ${skin.error}` : "No results",
+        float: "",
+      });
+    } else {
+      for (const row of rows) {
+        ws.addRow({
+          skin: skin.marketHashName,
+          price: row.priceText,
+          float: row.floatValue,
+        });
+      }
+
+      ws.addRow({ skin: "", price: "", float: "" });
+
+      if (skin.cheapestListing) {
+        ws.addRow({
+          skin: "Cheapest listing",
+          price: skin.cheapestListing.priceText,
+          float: skin.cheapestListing.floatValue,
+        });
+      }
+    }
+
+    ws.getRow(1).font = { bold: true };
+    ws.views = [{ state: "frozen", ySplit: 1 }];
+    ws.getColumn("float").numFmt = "0.00000000000000";
+  }
 
   await workbook.xlsx.writeFile(path.resolve(outputPath));
 }

@@ -15,6 +15,15 @@ export const DEFAULT_WAIT_MS = 1200;
 export const DEFAULT_WORKERS = 3;
 export const DEFAULT_QUALITY = "normal";
 
+/** Float scrapper defaults */
+export const DEFAULT_FLOAT_TOP = 10;
+export const DEFAULT_FLOAT_OUT = "steam_weapon_float_scan_results.xlsx";
+export const DEFAULT_FLOAT_WAIT_MS = 1500;
+export const DEFAULT_MAX_WINDOWS = 10;
+/** Steam wallet currency id (3 = EUR); alias for CURRENCY */
+export const DEFAULT_CURRENCY = CURRENCY;
+export const DEFAULT_LANGUAGE = "english";
+
 export const UNIVERSAL_STICKER_WEIGHT = 0.1;
 
 export const USER_AGENT =
@@ -48,7 +57,14 @@ export const WEAR_MAP = {
   },
 };
 
-export const QUALITY_VALUES = new Set(["normal", "st", "both"]);
+/** Sticker/charm multi scrapper: normal | StatTrak | both */
+export const STICKER_QUALITY_VALUES = new Set(["normal", "st", "both"]);
+
+/** @deprecated use STICKER_QUALITY_VALUES */
+export const QUALITY_VALUES = STICKER_QUALITY_VALUES;
+
+/** Float weapon multi: normal | StatTrak | Souvenir */
+export const FLOAT_WEAPON_QUALITY_VALUES = new Set(["normal", "st", "sv"]);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
