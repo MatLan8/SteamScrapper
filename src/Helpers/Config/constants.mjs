@@ -10,14 +10,12 @@ export const TARGET_PAGE_SIZE = 100;
 export const SKIP_LISTING_THRESHOLD = 1000;
 
 export const DEFAULT_TOP = 25;
-export const DEFAULT_OUT = "steam_sticker_charm_scan_results.xlsx";
 export const DEFAULT_WAIT_MS = 1200;
 export const DEFAULT_WORKERS = 3;
 export const DEFAULT_QUALITY = "normal";
 
 /** Float scrapper defaults */
 export const DEFAULT_FLOAT_TOP = 10;
-export const DEFAULT_FLOAT_OUT = "steam_weapon_float_scan_results.xlsx";
 export const DEFAULT_FLOAT_WAIT_MS = 1500;
 export const DEFAULT_MAX_WINDOWS = 10;
 /** Steam wallet currency id (3 = EUR); alias for CURRENCY */

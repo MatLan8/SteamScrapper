@@ -1,9 +1,7 @@
 import {
-  DEFAULT_FLOAT_OUT,
   DEFAULT_FLOAT_TOP,
   DEFAULT_FLOAT_WAIT_MS,
   DEFAULT_MAX_WINDOWS,
-  DEFAULT_OUT,
   DEFAULT_QUALITY,
   DEFAULT_TOP,
   DEFAULT_WAIT_MS,
@@ -28,7 +26,6 @@ export function parseWeaponSearchArgs(argv) {
     quality: DEFAULT_QUALITY,
     maxPrice: null,
     top: DEFAULT_TOP,
-    out: DEFAULT_OUT,
     workers: DEFAULT_WORKERS,
     maxWindows: DEFAULT_WORKERS,
     sortBy: "efficiency",
@@ -80,11 +77,6 @@ export function parseWeaponSearchArgs(argv) {
 
       case "--top":
         args.top = Number.parseInt(next, 10);
-        i += 1;
-        break;
-
-      case "--out":
-        args.out = next;
         i += 1;
         break;
 
@@ -169,7 +161,6 @@ export function parseFloatMultiArgs(argv) {
     wear: null,
     mode: null,
     top: DEFAULT_FLOAT_TOP,
-    out: DEFAULT_FLOAT_OUT,
     language: DEFAULT_LANGUAGE,
     cookie: null,
     waitMs: DEFAULT_FLOAT_WAIT_MS,
@@ -180,6 +171,7 @@ export function parseFloatMultiArgs(argv) {
     maxWindows: DEFAULT_WORKERS,
     debug: false,
     quality: "normal",
+    maxPrice: null,
   };
 
   for (let i = 2; i < argv.length; i += 1) {
@@ -201,10 +193,6 @@ export function parseFloatMultiArgs(argv) {
         break;
       case "--top":
         args.top = Number.parseInt(next, 10);
-        i += 1;
-        break;
-      case "--out":
-        args.out = next;
         i += 1;
         break;
       case "--language":
@@ -245,6 +233,10 @@ export function parseFloatMultiArgs(argv) {
         args.quality = next?.toLowerCase();
         i += 1;
         break;
+      case "--maxprice":
+        args.maxPrice = Number.parseFloat(next);
+        i += 1;
+        break;
       default:
         throw new Error(`Unknown argument: ${key}`);
     }
@@ -282,6 +274,13 @@ export function parseFloatMultiArgs(argv) {
     throw new Error("--max-listings-per-skin must be a positive integer");
   }
 
+  if (
+    args.maxPrice !== null &&
+    (!Number.isFinite(args.maxPrice) || args.maxPrice < 0)
+  ) {
+    throw new Error("--maxprice must be a non-negative number (EUR)");
+  }
+
   return args;
 }
 
@@ -300,6 +299,7 @@ export function parseSingleUrlArgs(argv) {
     headful: false,
     debug: false,
     currency: DEFAULT_CURRENCY,
+    maxPrice: null,
   };
 
   for (let i = 2; i < argv.length; i += 1) {
@@ -307,6 +307,10 @@ export function parseSingleUrlArgs(argv) {
     const next = argv[i + 1];
 
     switch (key) {
+      case "--maxprice":
+        args.maxPrice = Number.parseFloat(next);
+        i += 1;
+        break;
       case "--url":
         args.url = next;
         i += 1;
@@ -377,6 +381,13 @@ export function parseSingleUrlArgs(argv) {
 
   if (!Number.isInteger(args.currency) || args.currency <= 0) {
     throw new Error("--currency must be a positive integer");
+  }
+
+  if (
+    args.maxPrice !== null &&
+    (!Number.isFinite(args.maxPrice) || args.maxPrice < 0)
+  ) {
+    throw new Error("--maxprice must be a non-negative number (EUR)");
   }
 
   return args;

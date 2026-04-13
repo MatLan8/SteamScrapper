@@ -86,6 +86,14 @@ export async function workerRun(workerIndex, assignedSkins, args, scanFn) {
         `${workerLabel} [${skin.displayIndex}/${skin.totalCount}] ${skin.marketHashName}`,
       );
 
+      args.onProgress?.({
+        type: "skin:start",
+        workerIndex,
+        skinIndex: skin.displayIndex,
+        totalSkins: skin.totalCount,
+        marketHashName: skin.marketHashName,
+      });
+
       try {
         const scanned = await scanFn(page, skin, args, workerLabel);
 
@@ -101,12 +109,32 @@ export async function workerRun(workerIndex, assignedSkins, args, scanFn) {
           console.log(
             `${workerLabel}   skipped by threshold: ${skin.marketHashName} (${scanned.totalCount})`,
           );
+
+          args.onProgress?.({
+            type: "skin:done",
+            workerIndex,
+            skinIndex: skin.displayIndex,
+            totalSkins: skin.totalCount,
+            marketHashName: skin.marketHashName,
+            status: "skipped",
+            reason: scanned.skippedReason ?? null,
+          });
         } else {
           workerListings.push(...(scanned.scannedListings ?? []));
 
           console.log(
             `${workerLabel}   scanned listings kept: ${(scanned.scannedListings ?? []).length}`,
           );
+
+          args.onProgress?.({
+            type: "skin:done",
+            workerIndex,
+            skinIndex: skin.displayIndex,
+            totalSkins: skin.totalCount,
+            marketHashName: skin.marketHashName,
+            status: "success",
+            reason: null,
+          });
         }
       } catch (error) {
         const errorMessage = error?.message || String(error);
@@ -118,6 +146,16 @@ export async function workerRun(workerIndex, assignedSkins, args, scanFn) {
         failedSkins.push({
           marketHashName: skin.marketHashName,
           error: errorMessage,
+        });
+
+        args.onProgress?.({
+          type: "skin:done",
+          workerIndex,
+          skinIndex: skin.displayIndex,
+          totalSkins: skin.totalCount,
+          marketHashName: skin.marketHashName,
+          status: "failed",
+          reason: errorMessage,
         });
 
         if (isRateLimitError(error)) {

@@ -1,5 +1,7 @@
 # SteamScrapper - Project Summary
 
+**Navigation:** §2 tree and §3–5 scrappers; §6 shared helpers; §7–9 data pipeline; §12 constants; §13 CLI; **§14 HTTP API** (Express jobs + SSE); §15 misc notes.
+
 ## 1. Project Overview
 
 SteamScrapper is a collection of Node.js scripts that scrape the Steam Community Market for CS2 (Counter-Strike 2) weapon skins to find good deals. The project identifies undervalued listings by analyzing:
@@ -10,15 +12,22 @@ SteamScrapper is a collection of Node.js scripts that scrape the Steam Community
 
 All skin metadata (float, stickers, charms) is obtained by decoding the `steam://` inspect link embedded in each Steam market listing using the `@csfloat/cs2-inspect-serializer` library. The decoded object provides `paintwear` (float), `stickers[]`, and `keychains[]`.
 
+### How the project is organized (two surfaces)
+
+1. **CLI entry points** (`src/MarketScrappers/...`) -- Run with `node <script>.mjs` and flags from `parse-args.mjs`. They call the same core `run*` functions as the server and print summaries to stdout. No workbook export; results are console text (and the shared functions return structured objects if you import them).
+2. **HTTP API** (`server/`) -- Express app that enqueues **background jobs**, runs the same `run*` scraper functions, and returns **JSON** (job status + final results). Progress is pushed via **Server-Sent Events (SSE)**. The API does not write result files to disk.
+
+Shared logic lives under `src/Helpers/` and `src/MarketScrappers/`. The server imports scrapers with relative paths such as `../../src/MarketScrappers/...`.
+
 ### Runtime
 
 - **Language:** Node.js with ESM modules (`.mjs` files)
-- **No `package.json`** -- dependencies must be installed manually
-- **Dependencies:**
-  - `playwright` -- browser automation for Chromium-based scrappers
-  - `exceljs` -- XLSX workbook output for scan results
+- **Root `package.json`:** none. Scraper scripts rely on globally installed or manually linked packages.
+- **`server/package.json`:** defines the API server (`express`, `cors`); run from `server/` with `npm start` (default port **3001**, overridable with `PORT`).
+- **Scraper dependencies** (needed for CLI and for API routes that invoke Playwright scrapers):
+  - `playwright` -- Chromium automation for browser-based scrappers
   - `@csfloat/cs2-inspect-serializer` -- decodes Steam inspect links
-  - `node-fetch` -- HTTP requests in endpoint-based scrappers
+  - `node-fetch` or global `fetch` -- HTTP requests in endpoint-based float single scans
 
 ### Currency
 
@@ -32,6 +41,22 @@ All Steam API calls use currency code `3` (EUR). Prices from external sources in
 SteamScrapper/
 ├── docs/
 │   └── project-summary.md              # This file
+├── server/                              # Express HTTP API (jobs + DB file endpoints)
+│   ├── index.mjs                        #   App entry: CORS, JSON body, routes, listen
+│   ├── package.json                     #   express, cors; npm start -> node index.mjs
+│   ├── lib/
+│   │   ├── arg-builder.mjs              #   Validates JSON bodies -> scraper args (mirror of CLI defaults)
+│   │   └── job-manager.mjs              #   In-memory jobs, SSE broadcast, onProgress injection
+│   ├── routes/
+│   │   ├── sticker-routes.mjs           #   POST /api/sticker/multi
+│   │   ├── float-routes.mjs             #   POST /api/float/multi, single-endpoint, single-playwright
+│   │   ├── job-routes.mjs               #   GET job, SSE stream, cancel (stub)
+│   │   └── database-routes.mjs          #   GET raw sticker_db.json / charm_db.json
+│   └── services/
+│       ├── sticker_scraper_multi_browser_service.mjs   # runStickerCharmMulti -> JSON (strips missingTracker)
+│       ├── float_scraper_multi_browser_service.mjs     # runFloatMultiWeapon
+│       ├── float_scraper_single_endpoint_service.mjs
+│       └── float_scraper_single_browser_service.mjs
 ├── Database/                            # Final ID-keyed JSON databases consumed by scrappers
 │   ├── sticker_db.json                  #   Sticker ID -> { stickerName, price, source }
 │   └── charm_db.json                    #   { charms: { ID -> { charmName, price, source, rarePatterns } } }
@@ -48,8 +73,6 @@ SteamScrapper/
     │   │   └── constants.mjs            #   Central config: URLs, APPID, currency, defaults, wear map
     │   ├── db/
     │   │   └── load-databases.mjs       #   Loads sticker_db.json and charm_db.json into Maps
-    │   ├── Output/
-    │   │   └── excel-writer.mjs         #   XLSX writers for sticker and float results
     │   ├── Scanners/
     │   │   ├── float-scan-utils.mjs     #   Float-specific DOM extraction, ranking, endpoint parsing
     │   │   └── sticker-charm-scan-utils.mjs  # Sticker/charm page scanning and valuation
@@ -61,25 +84,25 @@ SteamScrapper/
     │   ├── Utils/
     │   │   ├── general.mjs              #   sleep, debugLog, formatEuro, formatDurationMs
     │   │   ├── price-utils.mjs          #   Price parsing and currency conversion
+    │   │   ├── sort-utils.mjs           #   sortListings for sticker/charm JSON results
     │   │   └── url-utils.mjs            #   Steam URL parsing and validation
     │   ├── Valuation/
     │   │   └── value-utils.mjs          #   Sticker/charm valuation and edge/efficiency scoring
     │   └── Workers/
     │       ├── worker-utils.mjs         #   Playwright worker pool (injectable scan function)
-    │       ├── float-worker-utils.mjs   #   Float multi weapon worker (XLSX-oriented results)
+    │       ├── float-worker-utils.mjs   #   Float multi weapon worker (per-skin float results)
     │       └── endpoint-worker-utils.mjs  # HTTP worker pool for endpoint variant
     │
     ├── MarketScrappers/                  # Main scrapper entry points
     │   ├── Float/
     │   │   ├── Multi/
-    │   │   │   └── multi_scrapper_extensionless.mjs     # All skins for a weapon (Playwright)
+    │   │   │   └── float_scraper_multi_browser.mjs     # All skins for a weapon (Playwright)
     │   │   └── Single/
-    │   │       ├── single_scrapper_extensionless.mjs    # One listing URL (Playwright)
-    │   │       └── single_scrapper_endpoint.mjs         # One listing URL (HTTP, no browser)
+    │   │       ├── float_scraper_single_browser.mjs    # One listing URL (Playwright)
+    │   │       └── float_scraper_single_endpoint.mjs   # One listing URL (HTTP, no browser)
     │   └── Sticker/
     │       └── Multi/
-    │           ├── sticker_charm_scraper_playwright.mjs  # All skins for a weapon (modular)
-    │           └── market_sticker_scrapper_browser.mjs   # Legacy monolith (~1839 lines)
+    │           └── sticker_scraper_multi_browser.mjs   # All skins for a weapon (modular)
     │
     ├── PriceCollection/                  # Scripts that scrape sticker/charm prices
     │   ├── Scrape_Sticker_prices/
@@ -125,7 +148,7 @@ SteamScrapper/
 
 Finds weapon skins with the lowest or highest float values. Useful for collectors seeking near-perfect or maximally worn skins.
 
-- **Multi scrapper** -- Searches Steam market for ALL skins of a given weapon + wear category, then scans each skin's listings for float values. Outputs an XLSX workbook with one sheet per skin.
+- **Multi scrapper** -- Searches Steam market for ALL skins of a given weapon + wear category, then scans each skin's listings for float values. Results are returned as structured data (per skin: top floats, prices, etc.).
 - **Single scrapper** -- Scans one specific listing URL for the best floats across all its listings.
 
 **How it works:**
@@ -146,7 +169,7 @@ Finds weapon skins where attached stickers and/or charms provide value that exce
 2. Each sticker/charm ID is looked up in `Database/sticker_db.json` or `Database/charm_db.json` to get its market price.
 3. Sticker value is weighted at 10% (`UNIVERSAL_STICKER_WEIGHT = 0.1`), charm value at 100%.
 4. Edge and efficiency scores are computed (see Section 11).
-5. Results are sorted by edge or efficiency and exported to XLSX.
+5. Results are sorted by edge or efficiency and surfaced in JSON (API) or in the CLI summary.
 
 ### 3.3 Charm Scrapper (Not Yet Implemented)
 
@@ -167,7 +190,7 @@ Every scrapper can be implemented in one of two transport variants:
 - Reads inspect links from the DOM: `.market_listing_row_action a[href^="steam://"]`.
 - Reads prices from DOM text elements.
 - Can use `--cookie` for authenticated sessions and `--headful`/`--headless` for visibility.
-- **File naming convention:** `*_extensionless.mjs`, `*_browser.mjs`, `*_playwright.mjs`.
+- **File naming convention:** `{type}_scraper_{multi|single}_browser.mjs` (e.g. `float_scraper_multi_browser.mjs`).
 
 ### 4.2 Endpoint (Direct HTTP) Variant
 
@@ -176,7 +199,7 @@ Every scrapper can be implemented in one of two transport variants:
 - Parses `results_html` from the JSON response using regex to extract inspect links.
 - Gets structured price data from the `listinginfo` JSON object.
 - No browser overhead, faster execution.
-- **File naming convention:** `*_endpoint.mjs`.
+- **File naming convention:** `{type}_scraper_single_endpoint.mjs` for float single-URL HTTP scans.
 
 ---
 
@@ -185,7 +208,7 @@ Every scrapper can be implemented in one of two transport variants:
 | Scrapper Type | Multi (Playwright) | Multi (Endpoint) | Single (Playwright) | Single (Endpoint) |
 |---|---|---|---|---|
 | **Float** | Yes | -- | Yes | Yes |
-| **Sticker/Charm** | Yes (monolith + modular) | -- | -- | -- |
+| **Sticker/Charm** | Yes (modular `sticker_scraper_multi_browser.mjs`) | -- | -- | -- |
 | **Charm-only** | -- | -- | -- | -- |
 
 **Legend:** "Yes" = implemented, "--" = not yet implemented.
@@ -208,6 +231,8 @@ Exports multiple CLI parsers for different scrapper types:
 | `validateCommonArgs(args)` | All parsers | Validates `--top`, `--workers`, `--wait-ms` |
 | `parseArgs(argv)` | Deprecated alias | Calls `parseWeaponSearchArgs` |
 
+**CLI vs HTTP (sticker/charm sort mode):** The CLI uses **`--edge`** or **`--efficiency`** (flags). The HTTP body uses **`sortBy`**: `"edge"` or `"efficiency"` (see `server/lib/arg-builder.mjs`).
+
 ### 6.2 `Config/constants.mjs`
 
 Central configuration. Key exports:
@@ -226,20 +251,17 @@ Central configuration. Key exports:
 | `STICKER_QUALITY_VALUES` | normal, st, both | Valid quality values for sticker scrappers |
 | `FLOAT_WEAPON_QUALITY_VALUES` | normal, st, sv | Valid quality values for float scrappers (includes Souvenir) |
 | `STICKER_DB_PATH` / `CHARM_DB_PATH` | Resolved paths | Paths to `Database/*.json` |
-| `DEFAULT_TOP`, `DEFAULT_OUT`, `DEFAULT_WAIT_MS`, `DEFAULT_WORKERS` | 25, xlsx name, 1200, 3 | Sticker scrapper defaults |
-| `DEFAULT_FLOAT_TOP`, `DEFAULT_FLOAT_OUT`, `DEFAULT_FLOAT_WAIT_MS`, `DEFAULT_MAX_WINDOWS` | 10, xlsx name, 1500, 10 | Float scrapper defaults |
+| `DEFAULT_TOP`, `DEFAULT_WAIT_MS`, `DEFAULT_WORKERS` | 25, 1200, 3 | Sticker scrapper defaults |
+| `DEFAULT_FLOAT_TOP`, `DEFAULT_FLOAT_WAIT_MS`, `DEFAULT_MAX_WINDOWS` | 10, 1500, 10 | Float scrapper defaults |
 
 ### 6.3 `db/load-databases.mjs`
 
 - `loadStickerDb()` -- Reads `sticker_db.json`, returns `{ stickerMap: Map<string, { id, stickerName, price, source }> }`.
 - `loadCharmDb()` -- Reads `charm_db.json`, returns `{ charmMap: Map, highlightReelMap: Map }`. Charms from `data.charms`, highlight reels from `data.highlight_reels`.
 
-### 6.4 `Output/excel-writer.mjs`
+### 6.4 `Utils/sort-utils.mjs`
 
-- `sortListings(listings, sortBy)` -- Sorts by edge or efficiency with tie-breaking.
-- `writeStickerWorkbook({...})` -- Multi-sheet XLSX: Results, Processed Skins, Skipped, Failed, Missing IDs, Summary.
-- `writeFloatWorkbook({...})` -- Per-skin sheets with Skin/Price/Float columns.
-- `safeSheetName(name, usedNames)` -- Sanitizes Excel sheet names (max 31 chars, no special chars).
+- `sortListings(listings, sortBy)` -- Sorts sticker/charm listing rows by edge or efficiency with tie-breaking (used before slicing to `--top`).
 
 ### 6.5 `Scanners/sticker-charm-scan-utils.mjs`
 
@@ -597,7 +619,7 @@ efficiency    = attachedValue / premiumPaid    (Infinity if premiumPaid <= 0 and
 ### Sticker/Charm Multi: `parseWeaponSearchArgs`
 
 ```
-node sticker_charm_scraper_playwright.mjs --weapon "AK-47" [options]
+node sticker_scraper_multi_browser.mjs --weapon "AK-47" [options]
 ```
 
 | Flag | Required | Default | Description |
@@ -606,8 +628,7 @@ node sticker_charm_scraper_playwright.mjs --weapon "AK-47" [options]
 | `--condition` | No | all (fn mw ft ww bs) | One or more wear values |
 | `--quality` | No | `normal` | `normal`, `st`, or `both` |
 | `--maxprice` | No | -- | Max EUR base price filter |
-| `--top` | No | `25` | How many top results to export |
-| `--out` | No | `steam_sticker_charm_scan_results.xlsx` | Output file path |
+| `--top` | No | `25` | How many top results to keep (after sorting) |
 | `--workers` | No | `3` | Parallel browser workers |
 | `--edge` | No | -- | Sort results by edge |
 | `--efficiency` | No | (default) | Sort results by efficiency |
@@ -620,7 +641,7 @@ node sticker_charm_scraper_playwright.mjs --weapon "AK-47" [options]
 ### Float Multi: `parseFloatMultiArgs`
 
 ```
-node multi_scrapper_extensionless.mjs --weapon "AWP" --wear fn --mode lowest [options]
+node float_scraper_multi_browser.mjs --weapon "AWP" --wear fn --mode lowest [options]
 ```
 
 | Flag | Required | Default | Description |
@@ -630,7 +651,6 @@ node multi_scrapper_extensionless.mjs --weapon "AWP" --wear fn --mode lowest [op
 | `--mode` | Yes | -- | `lowest` or `highest` |
 | `--quality` | No | `normal` | `normal`, `st`, or `sv` (Souvenir) |
 | `--top` | No | `10` | Top floats to keep per skin |
-| `--out` | No | `steam_weapon_float_scan_results.xlsx` | Output file |
 | `--language` | No | `english` | Steam search language |
 | `--workers` | No | `3` | Parallel browser workers |
 | `--max-skins` | No | -- | Limit how many skins to scan |
@@ -644,8 +664,8 @@ node multi_scrapper_extensionless.mjs --weapon "AWP" --wear fn --mode lowest [op
 ### Float Single: `parseSingleUrlArgs`
 
 ```
-node single_scrapper_extensionless.mjs --url "https://steamcommunity.com/market/listings/730/..." [options]
-node single_scrapper_endpoint.mjs --url "https://steamcommunity.com/market/listings/730/..." [options]
+node float_scraper_single_browser.mjs --url "https://steamcommunity.com/market/listings/730/..." [options]
+node float_scraper_single_endpoint.mjs --url "https://steamcommunity.com/market/listings/730/..." [options]
 ```
 
 | Flag | Required | Default | Description |
@@ -663,9 +683,56 @@ node single_scrapper_endpoint.mjs --url "https://steamcommunity.com/market/listi
 
 ---
 
-## 14. Legacy / Notes
+## 14. HTTP API (Express server)
 
-- **`market_sticker_scrapper_browser.mjs`** (~1839 lines) is a monolithic version of the sticker/charm scrapper. The modular entry point `sticker_charm_scraper_playwright.mjs` (~161 lines) replaces it using shared helpers. The monolith is kept for reference but is not maintained.
-- **`testDecode.mjs`** is a small CLI utility: `node testDecode.mjs "<steam_inspect_link>"` prints the decoded inspect payload.
-- **`csgo_english.txt`** at the project root is a duplicate of `GameFiles/csgo_english.txt`.
-- There is **no `package.json`** -- dependencies must be installed globally or via a manually created package file.
+The server exposes JSON-only workflows: clients POST a scan configuration, receive a **`jobId`**, then poll **`GET /api/jobs/:id`** or subscribe to **`GET /api/jobs/:id/stream`** (SSE) for progress and completion. Final scraper output is in **`job.results`** when `status === "completed"` (same shape as the return value of the corresponding `run*` function, with small field stripping in services as noted below).
+
+### 14.1 Layout and request validation
+
+- **`server/index.mjs`** -- Enables **CORS**, parses JSON bodies (default limit **2 MB** for large cookie strings), mounts routers, listens on `PORT` (default **3001**).
+- **`server/lib/arg-builder.mjs`** -- Maps HTTP JSON bodies to the same argument objects that CLI parsers produce (`weapon`, `conditions`, `sortBy`, `top`, `workers`, `cookie`, `headful`, etc.). Throws descriptive errors for invalid fields (mirrors `parse-args.mjs` rules conceptually).
+- **`server/lib/job-manager.mjs`** -- Creates **in-memory** jobs (`Map`), assigns UUIDs, injects **`onProgress(event)`** into args passed to the service runner, aggregates **`job.progress`**, and broadcasts events to SSE listeners. **Restarting the server clears all jobs.** Cookies are redacted in stored `job.args`. Job cancel is not implemented (`POST /api/jobs/:id/cancel` returns 501).
+
+### 14.2 Endpoints
+
+| Method | Path | Body / purpose |
+|--------|------|----------------|
+| `GET` | `/api/health` | `{ "ok": true }` liveness |
+| `POST` | `/api/sticker/multi` | Sticker/charm multi scan. Body fields: `weapon` (required), optional `conditions` (string[] wear keys), `quality`, `maxPrice`, `top`, `workers`, `sortBy` (`edge` \| `efficiency`), `waitMs`, `cookie`, `headful`, `debug`. Returns `{ jobId }`. |
+| `POST` | `/api/float/multi` | Float multi scan. Body: `weapon`, `wear` (`fn`\|`bs`), `mode` (`lowest`\|`highest`), `quality` (`normal`\|`st`\|`sv`), `top`, `language`, `workers`, `maxSkins`, `maxListingsPerSkin`, `waitMs`, `cookie`, `headful`, `debug`. Returns `{ jobId }`. |
+| `POST` | `/api/float/single-endpoint` | Float single URL via HTTP render API. Body: `url`, `mode`, `top`, `workers` or `maxWindows`, `waitMs`, `currency`, `cookie`, `headful`, `debug`. Returns `{ jobId }`. |
+| `POST` | `/api/float/single-playwright` | Float single URL via Playwright. Same body shape as single-endpoint. Returns `{ jobId }`. |
+| `GET` | `/api/jobs/:id` | Snapshot: `id`, `type`, `status` (`running` \| `completed` \| `failed`), `args` (redacted), `createdAt`, `completedAt`, `progress`, `results`, `error`. |
+| `GET` | `/api/jobs/:id/stream` | SSE: initial `snapshot` event, then progress events (`skin:start`, `skin:done`, `page:done`) and terminal `job:completed` or `job:failed`. Each line is `data: <json>\n\n`. |
+| `POST` | `/api/jobs/:id/cancel` | Not implemented (501). |
+| `GET` | `/api/db/stickers` | Raw contents of `Database/sticker_db.json`. |
+| `GET` | `/api/db/charms` | Raw contents of `Database/charm_db.json`. |
+
+Default port: **`3001`** (`process.env.PORT`).
+
+### 14.3 Services → scraper mapping
+
+| Service file | Imports | Notes |
+|--------------|---------|--------|
+| `sticker_scraper_multi_browser_service.mjs` | `runStickerCharmMulti` | Omits `missingTracker` from JSON response (`missingIds` still present). |
+| `float_scraper_multi_browser_service.mjs` | `runFloatMultiWeapon` | Returns full float multi result object. |
+| `float_scraper_single_endpoint_service.mjs` | `runFloatSingleEndpoint` | Strips `allResults` from response. |
+| `float_scraper_single_browser_service.mjs` | `runFloatSinglePlaywright` | Strips `allResults` from response. |
+
+### 14.4 Progress events (for UI / automation)
+
+Handlers in workers and scanners call `args.onProgress?.({ type, ... })`. Common `type` values include:
+
+- **`skin:start`** -- Current skin index, worker, `marketHashName`, `totalSkins`.
+- **`skin:done`** -- Skin finished; may include `status`: processed / skipped / failed.
+- **`page:done`** -- Pagination progress (`currentPage`, `totalPages`, listing counts, etc.).
+
+The job manager updates **`progress.completedSkins`**, **`progress.skippedSkins`**, **`progress.failedSkins`** from `skin:done` events when applicable.
+
+---
+
+## 15. Legacy / notes
+
+- **`testDecode.mjs`** -- CLI: `node testDecode.mjs "<steam_inspect_link>"` prints the decoded inspect payload.
+- **`csgo_english.txt`** at the project root may duplicate `GameFiles/csgo_english.txt` (keep `GameFiles/` as the canonical copy for pipelines).
+- **Root `package.json`** -- None; install scraper dependencies yourself. **`server/package.json`** is only for the Express API.

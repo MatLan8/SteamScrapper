@@ -140,6 +140,7 @@ export async function extractFloatListingsFromCurrentPage(
   args,
   seenIds,
   workerLabel,
+  pageIndex = 0,
 ) {
   await page.waitForTimeout(800);
 
@@ -181,6 +182,15 @@ export async function extractFloatListingsFromCurrentPage(
       }
     }
 
+    const priceCents = extractCentsFromPriceText(priceText);
+    if (
+      args.maxPrice != null &&
+      priceCents > 0 &&
+      priceCents > args.maxPrice * 100
+    ) {
+      break;
+    }
+
     const inspectLink = await row
       .locator('.market_listing_row_action a[href^="steam://"]')
       .first()
@@ -207,9 +217,10 @@ export async function extractFloatListingsFromCurrentPage(
     results.push({
       listingId,
       priceText,
-      priceCents: extractCentsFromPriceText(priceText),
+      priceCents,
       floatValue,
       inspectLink,
+      page: pageIndex + 1,
     });
 
     if (args.debug && results.length <= 3) {
@@ -222,6 +233,16 @@ export async function extractFloatListingsFromCurrentPage(
   return results;
 }
 
+const RATE_LIMIT_PREFIX = "RATE_LIMITED:";
+
+function throwIfRateLimited(rateLimited) {
+  if (rateLimited) {
+    throw new Error(
+      `${RATE_LIMIT_PREFIX} Too many requests (HTTP 429) during pagination`,
+    );
+  }
+}
+
 export async function floatScanSkinPage(page, marketHashName, args, workerLabel) {
   if (args.debug) {
     console.log(`${workerLabel}  Scanning skin: ${marketHashName}`);
@@ -229,115 +250,154 @@ export async function floatScanSkinPage(page, marketHashName, args, workerLabel)
 
   const url = buildListingPageUrl(marketHashName);
 
-  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
-  await waitForListingPageStableSoft(page, args);
-  await floatSoftForcePageSize(page, args, TARGET_PAGE_SIZE);
+  let rateLimited = false;
+  const onResponse = (resp) => {
+    if (resp.status() === 429) rateLimited = true;
+  };
+  page.on("response", onResponse);
 
-  const meta = await getSearchResultsMeta(page);
+  try {
+    const response = await page.goto(url, {
+      waitUntil: "domcontentloaded",
+      timeout: 60000,
+    });
+    if (response && response.status() === 429) {
+      throw new Error(`${RATE_LIMIT_PREFIX} Too many requests (HTTP 429)`);
+    }
+    throwIfRateLimited(rateLimited);
 
-  if (args.debug) {
-    console.log(
-      `${workerLabel}    after page-size apply: totalCount=${meta.totalCount} pageSize=${meta.pageSize} currentPage=${meta.currentPage}`,
-    );
-  }
+    await waitForListingPageStableSoft(page, args);
+    throwIfRateLimited(rateLimited);
 
-  if (meta.totalCount > SKIP_LISTING_THRESHOLD) {
-    return {
-      marketHashName,
-      skinName: extractSkinNameParts(marketHashName).skinName,
-      listingCount: 0,
-      decodedCount: 0,
-      failedDecodeCount: 0,
-      missingInspectCount: 0,
-      topResults: [],
-      cheapestListing: null,
-      skipped: true,
-      skippedReason: `Skipped because listing count ${meta.totalCount} is greater than ${SKIP_LISTING_THRESHOLD}`,
-      totalCount: meta.totalCount,
-    };
-  }
+    await floatSoftForcePageSize(page, args, TARGET_PAGE_SIZE);
+    throwIfRateLimited(rateLimited);
 
-  const effectivePageSize = meta.pageSize > 0 ? meta.pageSize : 10;
-  const totalPages =
-    meta.totalCount > 0 ? Math.ceil(meta.totalCount / effectivePageSize) : 1;
+    const meta = await getSearchResultsMeta(page);
+    throwIfRateLimited(rateLimited);
 
-  const listings = [];
-  const seenIds = new Set();
-  let missingInspectCount = 0;
-  const failedDecodeCount = 0;
-
-  for (let pageIndex = 0; pageIndex < totalPages; pageIndex += 1) {
-    if (args.maxListingsPerSkin && seenIds.size >= args.maxListingsPerSkin) {
-      break;
+    if (args.debug) {
+      console.log(
+        `${workerLabel}    after page-size apply: totalCount=${meta.totalCount} pageSize=${meta.pageSize} currentPage=${meta.currentPage}`,
+      );
     }
 
-    if (pageIndex > 0) {
-      if (args.debug) {
-        console.log(`${workerLabel}    going to page index ${pageIndex}`);
+    // #region agent log
+    fetch('http://127.0.0.1:7886/ingest/4e27bff3-ffff-4c42-9349-997b4cf16f56',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'af75e4'},body:JSON.stringify({sessionId:'af75e4',location:'float-scan-utils.mjs:284',message:'skip threshold check',data:{marketHashName,totalCount:meta.totalCount,maxListingsPerSkin:args.maxListingsPerSkin,SKIP_LISTING_THRESHOLD,condResult:!args.maxListingsPerSkin&&meta.totalCount>SKIP_LISTING_THRESHOLD},timestamp:Date.now(),hypothesisId:'H3'})}).catch(()=>{});
+    // #endregion
+    if (
+      !args.maxListingsPerSkin &&
+      meta.totalCount > SKIP_LISTING_THRESHOLD
+    ) {
+      return {
+        marketHashName,
+        skinName: extractSkinNameParts(marketHashName).skinName,
+        listingCount: 0,
+        decodedCount: 0,
+        failedDecodeCount: 0,
+        missingInspectCount: 0,
+        topResults: [],
+        cheapestListing: null,
+        skipped: true,
+        skippedReason: `Skipped because listing count ${meta.totalCount} is greater than ${SKIP_LISTING_THRESHOLD}`,
+        totalCount: meta.totalCount,
+      };
+    }
+
+    const effectivePageSize = meta.pageSize > 0 ? meta.pageSize : 10;
+    const totalPages =
+      meta.totalCount > 0 ? Math.ceil(meta.totalCount / effectivePageSize) : 1;
+
+    const listings = [];
+    const seenIds = new Set();
+    let missingInspectCount = 0;
+    const failedDecodeCount = 0;
+
+    for (let pageIndex = 0; pageIndex < totalPages; pageIndex += 1) {
+      if (args.maxListingsPerSkin && seenIds.size >= args.maxListingsPerSkin) {
+        break;
       }
 
-      const moved = await floatSoftGoToResultPage(page, args, pageIndex);
-      if (!moved) {
+      if (pageIndex > 0) {
+        if (args.debug) {
+          console.log(`${workerLabel}    going to page index ${pageIndex}`);
+        }
+
+        const moved = await floatSoftGoToResultPage(page, args, pageIndex);
+        throwIfRateLimited(rateLimited);
+        if (!moved) {
+          if (args.debug) {
+            console.log(
+              `${workerLabel}    failed to move to page index ${pageIndex}, stopping this skin`,
+            );
+          }
+          break;
+        }
+      }
+
+      const beforeCount = listings.length;
+      const beforeSeen = seenIds.size;
+
+      const currentPageResults = await extractFloatListingsFromCurrentPage(
+        page,
+        args,
+        seenIds,
+        workerLabel,
+        pageIndex,
+      );
+      throwIfRateLimited(rateLimited);
+
+      listings.push(...currentPageResults);
+
+      const seenThisPage = seenIds.size - beforeSeen;
+      const addedThisPage = listings.length - beforeCount;
+
+      if (seenThisPage > addedThisPage) {
+        missingInspectCount += seenThisPage - addedThisPage;
+      }
+
+      if (args.debug) {
+        console.log(
+          `${workerLabel}    collected so far: ${seenIds.size} listings after page index ${pageIndex}`,
+        );
+      }
+
+      args.onProgress?.({
+        type: "page:done",
+        marketHashName,
+        currentPage: pageIndex + 1,
+        totalPages,
+        listingsCollected: listings.length,
+      });
+
+      if (currentPageResults.length === 0) {
         if (args.debug) {
           console.log(
-            `${workerLabel}    failed to move to page index ${pageIndex}, stopping this skin`,
+            `${workerLabel}    no new listings found on page index ${pageIndex}, stopping this skin`,
           );
         }
         break;
       }
     }
 
-    const beforeCount = listings.length;
-    const beforeSeen = seenIds.size;
+    const { skinName } = extractSkinNameParts(marketHashName);
+    const topResults = rankFloatListings(listings, args.mode, args.top);
+    const cheapestListing = listings.length > 0 ? listings[0] : null;
 
-    const currentPageResults = await extractFloatListingsFromCurrentPage(
-      page,
-      args,
-      seenIds,
-      workerLabel,
-    );
-
-    listings.push(...currentPageResults);
-
-    const seenThisPage = seenIds.size - beforeSeen;
-    const addedThisPage = listings.length - beforeCount;
-
-    if (seenThisPage > addedThisPage) {
-      missingInspectCount += seenThisPage - addedThisPage;
-    }
-
-    if (args.debug) {
-      console.log(
-        `${workerLabel}    collected so far: ${seenIds.size} listings after page index ${pageIndex}`,
-      );
-    }
-
-    if (currentPageResults.length === 0) {
-      if (args.debug) {
-        console.log(
-          `${workerLabel}    no new listings found on page index ${pageIndex}, stopping this skin`,
-        );
-      }
-      break;
-    }
+    return {
+      marketHashName,
+      skinName,
+      listingCount: listings.length,
+      decodedCount: listings.length,
+      failedDecodeCount,
+      missingInspectCount,
+      topResults,
+      cheapestListing,
+      skipped: false,
+      totalCount: meta.totalCount,
+    };
+  } finally {
+    page.removeListener("response", onResponse);
   }
-
-  const { skinName } = extractSkinNameParts(marketHashName);
-  const topResults = rankFloatListings(listings, args.mode, args.top);
-  const cheapestListing = listings.length > 0 ? listings[0] : null;
-
-  return {
-    marketHashName,
-    skinName,
-    listingCount: listings.length,
-    decodedCount: listings.length,
-    failedDecodeCount,
-    missingInspectCount,
-    topResults,
-    cheapestListing,
-    skipped: false,
-    totalCount: meta.totalCount,
-  };
 }
 
 /**
@@ -375,6 +435,15 @@ export function extractFloatListingsFromRenderPayload(
       continue;
     }
 
+    const priceCents = extractCentsFromListingInfo(listing);
+    if (
+      args.maxPrice != null &&
+      priceCents > 0 &&
+      priceCents > args.maxPrice * 100
+    ) {
+      continue;
+    }
+
     let decoded;
     try {
       decoded = decodeLink(inspectLink);
@@ -399,7 +468,7 @@ export function extractFloatListingsFromRenderPayload(
       listingId,
       inspectLink,
       priceText: extractPriceTextFromListingInfo(listing, currencyId),
-      priceCents: extractCentsFromListingInfo(listing),
+      priceCents,
       floatValue,
       start,
     });
@@ -538,6 +607,15 @@ export async function extractFloatListingsFromCurrentPageInRange(
       }
     }
 
+    const priceCents = extractCentsFromPriceText(priceText);
+    if (
+      args.maxPrice != null &&
+      priceCents > 0 &&
+      priceCents > args.maxPrice * 100
+    ) {
+      break;
+    }
+
     const inspectLink = await row
       .locator('.market_listing_row_action a[href^="steam://"]')
       .first()
@@ -575,7 +653,7 @@ export async function extractFloatListingsFromCurrentPageInRange(
       listingId,
       inspectLink,
       priceText,
-      priceCents: extractCentsFromPriceText(priceText),
+      priceCents,
       floatValue,
       page: pageIndex + 1,
       globalListingIndex,

@@ -235,6 +235,14 @@ export async function scanSkinPage(
 
     scannedListings.push(...results);
 
+    args.onProgress?.({
+      type: "page:done",
+      marketHashName: skinInfo.marketHashName,
+      currentPage: pageIndex + 1,
+      totalPages,
+      listingsCollected: scannedListings.length,
+    });
+
     if (shouldStopByPrice) {
       debugLog(
         args,

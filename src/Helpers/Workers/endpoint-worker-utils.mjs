@@ -72,6 +72,8 @@ export async function httpWorkerRun(
     await sleep(initialDelay);
   }
 
+  let localRequestIndex = 0;
+
   for (
     let start = plan.requestStart;
     start <= plan.requestEnd;
@@ -81,6 +83,13 @@ export async function httpWorkerRun(
 
     try {
       await onPageStart(start);
+      localRequestIndex += 1;
+      args.onProgress?.({
+        type: "page:done",
+        workerIndex: plan.workerIndex,
+        currentRequest: localRequestIndex,
+        totalRequests: plan.assignedRequests,
+      });
     } catch (error) {
       console.log(
         `${workerLabel}: failed request start=${start}: ${error?.message || String(error)}`,
