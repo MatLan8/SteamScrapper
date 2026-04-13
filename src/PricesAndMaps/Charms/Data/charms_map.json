@@ -1,0 +1,2835 @@
+{
+  "charms": {
+    "Charm | Lil' Ava": {
+      "stickerid": 1
+    },
+    "Charm | That's Bananas": {
+      "stickerid": 2
+    },
+    "Charm | Lil' Whiskers": {
+      "stickerid": 3
+    },
+    "Charm | Lil' Sandy": {
+      "stickerid": 4
+    },
+    "Charm | Chicken Lil'": {
+      "stickerid": 5
+    },
+    "Charm | Lil' Crass": {
+      "stickerid": 6
+    },
+    "Charm | Hot Howl": {
+      "stickerid": 7
+    },
+    "Charm | Big Kev": {
+      "stickerid": 8
+    },
+    "Charm | Lil' Monster": {
+      "stickerid": 9
+    },
+    "Charm | Hot Sauce": {
+      "stickerid": 10
+    },
+    "Charm | Diamond Dog": {
+      "stickerid": 11
+    },
+    "Charm | Pinch O' Salt": {
+      "stickerid": 12
+    },
+    "Charm | Diner Dog": {
+      "stickerid": 13
+    },
+    "Charm | Lil' Teacup": {
+      "stickerid": 14
+    },
+    "Charm | Lil' SAS": {
+      "stickerid": 15
+    },
+    "Charm | Hot Wurst": {
+      "stickerid": 16
+    },
+    "Charm | Baby's AK": {
+      "stickerid": 17
+    },
+    "Charm | Die-cast AK": {
+      "stickerid": 18
+    },
+    "Charm | Pocket AWP": {
+      "stickerid": 19
+    },
+    "Charm | Titeenium AWP": {
+      "stickerid": 20
+    },
+    "Charm | Baby Karat CT": {
+      "stickerid": 21
+    },
+    "Charm | Whittle Knife": {
+      "stickerid": 22
+    },
+    "Charm | POP Art": {
+      "stickerid": 23
+    },
+    "Charm | Lil' Squirt": {
+      "stickerid": 24
+    },
+    "Charm | Disco MAC": {
+      "stickerid": 25
+    },
+    "Charm | Backsplash": {
+      "stickerid": 26
+    },
+    "Charm | Lil' Cap Gun": {
+      "stickerid": 27
+    },
+    "Charm | Hot Hands": {
+      "stickerid": 28
+    },
+    "Charm | Semi-Precious": {
+      "stickerid": 29
+    },
+    "Charm | Baby Karat T": {
+      "stickerid": 30
+    },
+    "Charm | Glamour Shot": {
+      "stickerid": 31
+    },
+    "Charm | Stitch-Loaded": {
+      "stickerid": 32
+    },
+    "Charm | Lil' Squatch": {
+      "stickerid": 33
+    },
+    "Charm | Lil' Curse": {
+      "stickerid": 38
+    },
+    "Charm | Lil' Serpent": {
+      "stickerid": 39
+    },
+    "Charm | Lil' Baller": {
+      "stickerid": 40
+    },
+    "Charm | Dead Weight": {
+      "stickerid": 41
+    },
+    "Charm | Lil' Prick": {
+      "stickerid": 42
+    },
+    "Charm | Lil' Buns": {
+      "stickerid": 43
+    },
+    "Charm | Lil' Smokey": {
+      "stickerid": 44
+    },
+    "Charm | Lil' Eldritch": {
+      "stickerid": 45
+    },
+    "Charm | Lil' Happy": {
+      "stickerid": 46
+    },
+    "Charm | Magmatude": {
+      "stickerid": 47
+    },
+    "Charm | Lil' Cackle": {
+      "stickerid": 48
+    },
+    "Charm | Quick Silver": {
+      "stickerid": 49
+    },
+    "Charm | Lil' No. 2": {
+      "stickerid": 50
+    },
+    "Charm | Piñatita": {
+      "stickerid": 51
+    },
+    "Charm | Pocket Pop": {
+      "stickerid": 52
+    },
+    "Charm | Lil' Hero": {
+      "stickerid": 53
+    },
+    "Charm | Lil' Tusk": {
+      "stickerid": 54
+    },
+    "Charm | Lil' Goop": {
+      "stickerid": 55
+    },
+    "Charm | Hang Loose": {
+      "stickerid": 56
+    },
+    "Charm | Lil' Vino": {
+      "stickerid": 57
+    },
+    "Charm | Lil' Moments": {
+      "stickerid": 58
+    },
+    "Charm | Lil' Boo": {
+      "stickerid": 59
+    },
+    "Charm | Lil' Chirp": {
+      "stickerid": 60
+    },
+    "Charm | Big Brain": {
+      "stickerid": 61
+    },
+    "Charm | Biomech": {
+      "stickerid": 62
+    },
+    "Charm | Splatter Cat": {
+      "stickerid": 63
+    },
+    "Charm | Gritty": {
+      "stickerid": 64
+    },
+    "Charm | Fluffy": {
+      "stickerid": 65
+    },
+    "Charm | Whittle Guy": {
+      "stickerid": 66
+    },
+    "Charm | Lil' Zen": {
+      "stickerid": 67
+    },
+    "Charm | Lil' Facelift": {
+      "stickerid": 68
+    },
+    "Charm | Lil' Chomper": {
+      "stickerid": 69
+    },
+    "Charm | Lil' Bloody": {
+      "stickerid": 70
+    },
+    "Charm | Lil' Dumplin'": {
+      "stickerid": 71
+    },
+    "Charm | Bomb Tag": {
+      "stickerid": 72
+    },
+    "Charm | Glitter Bomb": {
+      "stickerid": 73
+    },
+    "Charm | Lil' Eco": {
+      "stickerid": 74
+    },
+    "Charm | Hungry Eyes": {
+      "stickerid": 75
+    },
+    "Charm | Eye of Ball": {
+      "stickerid": 76
+    },
+    "Charm | Lil' Yeti": {
+      "stickerid": 77
+    },
+    "Charm | 8 Ball IGL": {
+      "stickerid": 78
+    },
+    "Charm | Flash Bomb": {
+      "stickerid": 79
+    },
+    "Charm | Lil' Ferno": {
+      "stickerid": 80
+    },
+    "Charm | Butane Buddy": {
+      "stickerid": 81
+    },
+    "Charm | Dr. Brian": {
+      "stickerid": 82
+    }
+  },
+  "highlight_reels": {
+    "Souvenir Charm | Austin 2025 Highlight | chopper Double Kill": {
+      "stickerid": 1
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 100 Utility Damage": {
+      "stickerid": 2
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 1v2 Denied": {
+      "stickerid": 3
+    },
+    "Souvenir Charm | Austin 2025 Highlight | chopper Triple Entry": {
+      "stickerid": 4
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Pistol Kill": {
+      "stickerid": 5
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pros Never Fake": {
+      "stickerid": 6
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Inhuman Reactions": {
+      "stickerid": 7
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Kill And A Defuse": {
+      "stickerid": 8
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat Quadra Kill": {
+      "stickerid": 9
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Run And Gun": {
+      "stickerid": 10
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat Double Kill": {
+      "stickerid": 11
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Always Buy A Defuser": {
+      "stickerid": 12
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat: The Clutch God": {
+      "stickerid": 13
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 1v2 Clutch": {
+      "stickerid": 14
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch King": {
+      "stickerid": 15
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Reactions": {
+      "stickerid": 16
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Missed Him": {
+      "stickerid": 17
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Two Nades To The Head": {
+      "stickerid": 18
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Almost": {
+      "stickerid": 19
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Double Kill": {
+      "stickerid": 20
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Quadra Kill": {
+      "stickerid": 21
+    },
+    "Souvenir Charm | Austin 2025 Highlight | torzsi Triple Kill": {
+      "stickerid": 22
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Burning Triple Kill": {
+      "stickerid": 23
+    },
+    "Souvenir Charm | Austin 2025 Highlight | zont1x Triple Kill": {
+      "stickerid": 24
+    },
+    "Souvenir Charm | Austin 2025 Highlight | A Triple And Icy Veins": {
+      "stickerid": 25
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Brollan Double Kill": {
+      "stickerid": 26
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Brollan Triple Kill": {
+      "stickerid": 27
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Brollan Smoke Criminal": {
+      "stickerid": 28
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Iron Man": {
+      "stickerid": 29
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Too Fast Reactions": {
+      "stickerid": 30
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Flying Spray": {
+      "stickerid": 31
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Almost The Ace": {
+      "stickerid": 32
+    },
+    "Souvenir Charm | Austin 2025 Highlight | donk Ace": {
+      "stickerid": 33
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fast MP9 Double Kill": {
+      "stickerid": 34
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 1 Holds 1 Dodges": {
+      "stickerid": 35
+    },
+    "Souvenir Charm | Austin 2025 Highlight | I'm Right Behind You": {
+      "stickerid": 36
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat Double Entry": {
+      "stickerid": 37
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Baited Into A Double Kill": {
+      "stickerid": 38
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 2K Spraydown": {
+      "stickerid": 39
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Not Over Yet": {
+      "stickerid": 40
+    },
+    "Souvenir Charm | Austin 2025 Highlight | magixx Double Kill": {
+      "stickerid": 41
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Scout Demon": {
+      "stickerid": 42
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Not Quite The Angle": {
+      "stickerid": 43
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sharpshooter": {
+      "stickerid": 44
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Denied": {
+      "stickerid": 45
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Dust II Triple Kill": {
+      "stickerid": 46
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Masterclass Lurk": {
+      "stickerid": 47
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Where Are You Buddy?": {
+      "stickerid": 48
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx: Help Is Here": {
+      "stickerid": 49
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN: The Joker": {
+      "stickerid": 50
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN Dust II Triple Kill": {
+      "stickerid": 51
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Missed Him But It's Okay": {
+      "stickerid": 52
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Behind You": {
+      "stickerid": 53
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Pistol": {
+      "stickerid": 54
+    },
+    "Souvenir Charm | Austin 2025 Highlight | donk Triple Kill": {
+      "stickerid": 55
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Stand Still": {
+      "stickerid": 56
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 3-2-1-GO!": {
+      "stickerid": 57
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat Spray And Pray": {
+      "stickerid": 58
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Anchoring Double Kill": {
+      "stickerid": 59
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double AWP Entry": {
+      "stickerid": 60
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Wont go quietly": {
+      "stickerid": 61
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Flying Entry": {
+      "stickerid": 62
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Thanks For The M4A1-S": {
+      "stickerid": 63
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Nuke Double Dink": {
+      "stickerid": 64
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Too Close": {
+      "stickerid": 65
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Double Nuke Kill": {
+      "stickerid": 66
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Help Is Here": {
+      "stickerid": 67
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Let's Goo": {
+      "stickerid": 68
+    },
+    "Souvenir Charm | Austin 2025 Highlight | torzsi Double Nuke Kill": {
+      "stickerid": 69
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Double Kill": {
+      "stickerid": 70
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Relocate": {
+      "stickerid": 71
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Boost": {
+      "stickerid": 72
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN: The Nuke Eco Fragger": {
+      "stickerid": 73
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN Nuke Triple Kill": {
+      "stickerid": 74
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Damage Dealer": {
+      "stickerid": 75
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Textbook Hold": {
+      "stickerid": 76
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Ninja Lurker": {
+      "stickerid": 77
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Tec-9 Tapped": {
+      "stickerid": 78
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Captain Brazil": {
+      "stickerid": 79
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sixth Sense": {
+      "stickerid": 80
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dgt Almost Clutch": {
+      "stickerid": 81
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dgt Clutch Attempt": {
+      "stickerid": 82
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Lower Defense": {
+      "stickerid": 83
+    },
+    "Souvenir Charm | Austin 2025 Highlight | FalleN Double Nuke Kill": {
+      "stickerid": 84
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Leaving Scraps": {
+      "stickerid": 85
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Tec-9 Master": {
+      "stickerid": 86
+    },
+    "Souvenir Charm | Austin 2025 Highlight | FalleN Closer": {
+      "stickerid": 87
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fast Reactions": {
+      "stickerid": 88
+    },
+    "Souvenir Charm | Austin 2025 Highlight | molodoy Triple Kill": {
+      "stickerid": 89
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Double Nuke Kill": {
+      "stickerid": 90
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Retake Denied": {
+      "stickerid": 91
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Kill": {
+      "stickerid": 92
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Just One": {
+      "stickerid": 93
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 8HP Clutch": {
+      "stickerid": 94
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pistol King": {
+      "stickerid": 95
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pistol Kills": {
+      "stickerid": 96
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eco Farmer": {
+      "stickerid": 97
+    },
+    "Souvenir Charm | Austin 2025 Highlight | YEKINDAR Double Kill": {
+      "stickerid": 98
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise P2000": {
+      "stickerid": 99
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fire Fight": {
+      "stickerid": 100
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Anchor Man": {
+      "stickerid": 101
+    },
+    "Souvenir Charm | Austin 2025 Highlight | yuurih Entry Fragger": {
+      "stickerid": 102
+    },
+    "Souvenir Charm | Austin 2025 Highlight | biguzera Double Kill": {
+      "stickerid": 103
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dav1deuS Double Anubis Kill": {
+      "stickerid": 104
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eco Frags": {
+      "stickerid": 105
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Closing Out": {
+      "stickerid": 106
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutching Up": {
+      "stickerid": 107
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Defender": {
+      "stickerid": 108
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoked'em": {
+      "stickerid": 109
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Stack Kill": {
+      "stickerid": 110
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Golden Opportunity": {
+      "stickerid": 111
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sneaky Pistol": {
+      "stickerid": 112
+    },
+    "Souvenir Charm | Austin 2025 Highlight | FalleN Double Anubis Kill": {
+      "stickerid": 113
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Two": {
+      "stickerid": 114
+    },
+    "Souvenir Charm | Austin 2025 Highlight | KSCERATO Kobe": {
+      "stickerid": 115
+    },
+    "Souvenir Charm | Austin 2025 Highlight | KSCERATO Too Slow": {
+      "stickerid": 116
+    },
+    "Souvenir Charm | Austin 2025 Highlight | KSCERATO Double Kill": {
+      "stickerid": 117
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Missed'em": {
+      "stickerid": 118
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Clutch Attempt": {
+      "stickerid": 119
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Quad Kill": {
+      "stickerid": 120
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Double Anubis Kill": {
+      "stickerid": 121
+    },
+    "Souvenir Charm | Austin 2025 Highlight | snow Double Kill": {
+      "stickerid": 122
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Chaos Mode": {
+      "stickerid": 123
+    },
+    "Souvenir Charm | Austin 2025 Highlight | snow Triple Kill": {
+      "stickerid": 124
+    },
+    "Souvenir Charm | Austin 2025 Highlight | YEKINDAR Triple Kill": {
+      "stickerid": 125
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Opening Up": {
+      "stickerid": 126
+    },
+    "Souvenir Charm | Austin 2025 Highlight | yuurih Double Kill": {
+      "stickerid": 127
+    },
+    "Souvenir Charm | Austin 2025 Highlight | biguzera: The Entry Demon": {
+      "stickerid": 128
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Flank": {
+      "stickerid": 129
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Kill To Victory": {
+      "stickerid": 130
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Two FalleN Pistol Headshots": {
+      "stickerid": 131
+    },
+    "Souvenir Charm | Austin 2025 Highlight | FalleN King Of Banana": {
+      "stickerid": 132
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Afterplant Secured": {
+      "stickerid": 133
+    },
+    "Souvenir Charm | Austin 2025 Highlight | KSCERATO Triple Kill": {
+      "stickerid": 134
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Too Strong Jiggles": {
+      "stickerid": 135
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Anchor In Pit": {
+      "stickerid": 136
+    },
+    "Souvenir Charm | Austin 2025 Highlight | molodoy Almost The Hero": {
+      "stickerid": 137
+    },
+    "Souvenir Charm | Austin 2025 Highlight | A Triple Into Overtime": {
+      "stickerid": 138
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Look Behind You": {
+      "stickerid": 139
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Miss Into A Double Kill": {
+      "stickerid": 140
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Too Slow": {
+      "stickerid": 141
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Peek Me And You're Dead": {
+      "stickerid": 142
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Applaud The Spray Transfer": {
+      "stickerid": 143
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jiggle Too Wide And You're Dead": {
+      "stickerid": 144
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Two YEKINDAR Pistol Headshots": {
+      "stickerid": 145
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Eco Hunter": {
+      "stickerid": 146
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Utility Rush": {
+      "stickerid": 147
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sneaky Double Kill": {
+      "stickerid": 148
+    },
+    "Souvenir Charm | Austin 2025 Highlight | YEKINDAR King Of Banana": {
+      "stickerid": 149
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Flying Double Entry": {
+      "stickerid": 150
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Instant Reaction Headshot": {
+      "stickerid": 151
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Two Is Not Enough": {
+      "stickerid": 152
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Grenadier": {
+      "stickerid": 153
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Aleksib Double Kill": {
+      "stickerid": 154
+    },
+    "Souvenir Charm | Austin 2025 Highlight | b1t Double AK Kill": {
+      "stickerid": 155
+    },
+    "Souvenir Charm | Austin 2025 Highlight | b1t Double Entry": {
+      "stickerid": 156
+    },
+    "Souvenir Charm | Austin 2025 Highlight | b1t: The Mirage Cowboy": {
+      "stickerid": 157
+    },
+    "Souvenir Charm | Austin 2025 Highlight | b1t Double MP9 Kill": {
+      "stickerid": 158
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Spray Transfer": {
+      "stickerid": 159
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ: The Entry Demon": {
+      "stickerid": 160
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Triple Entry": {
+      "stickerid": 161
+    },
+    "Souvenir Charm | Austin 2025 Highlight | iM Quad Kill": {
+      "stickerid": 162
+    },
+    "Souvenir Charm | Austin 2025 Highlight | An Entry And A Donk": {
+      "stickerid": 163
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Headshot": {
+      "stickerid": 164
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Double Mirage Kill": {
+      "stickerid": 165
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quad Kill And A Clutch": {
+      "stickerid": 166
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Spraying Flick": {
+      "stickerid": 167
+    },
+    "Souvenir Charm | Austin 2025 Highlight | B Site Survivor": {
+      "stickerid": 168
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Spraydown": {
+      "stickerid": 169
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful Double Deagle": {
+      "stickerid": 170
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful Teamkiller": {
+      "stickerid": 171
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful: The Clutch God": {
+      "stickerid": 172
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple AWP Kill": {
+      "stickerid": 173
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Gamble": {
+      "stickerid": 174
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rare Misses But Manages A Flick": {
+      "stickerid": 175
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Double Mirage Kill": {
+      "stickerid": 176
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Denied": {
+      "stickerid": 177
+    },
+    "Souvenir Charm | Austin 2025 Highlight | He Can Rifle Too": {
+      "stickerid": 178
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Smoke Sneaker": {
+      "stickerid": 179
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Whiff": {
+      "stickerid": 180
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutching MP9": {
+      "stickerid": 181
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 1 Bullet": {
+      "stickerid": 182
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Bodyblocking Smokes": {
+      "stickerid": 183
+    },
+    "Souvenir Charm | Austin 2025 Highlight | b1t: The Nuke Cowboy": {
+      "stickerid": 184
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Double Nuke Kill": {
+      "stickerid": 185
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Simultaneous Death": {
+      "stickerid": 186
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Triple Pistol Kill": {
+      "stickerid": 187
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Triple Entry": {
+      "stickerid": 188
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Teamkiller": {
+      "stickerid": 189
+    },
+    "Souvenir Charm | Austin 2025 Highlight | On The Ladder??": {
+      "stickerid": 190
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Not Enough": {
+      "stickerid": 191
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quad Kill Shutdown": {
+      "stickerid": 192
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz Double Nuke Kill": {
+      "stickerid": 193
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful: The Eco Fragger": {
+      "stickerid": 194
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful Double AWP Kill": {
+      "stickerid": 195
+    },
+    "Souvenir Charm | Austin 2025 Highlight | w0nderful Combat AWP": {
+      "stickerid": 196
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Double Nuke Kill": {
+      "stickerid": 197
+    },
+    "Souvenir Charm | Austin 2025 Highlight | You Won't Get My AK": {
+      "stickerid": 198
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Backstabber": {
+      "stickerid": 199
+    },
+    "Souvenir Charm | Austin 2025 Highlight | There's No Escape": {
+      "stickerid": 200
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Look 1 Hand": {
+      "stickerid": 201
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The AWP Headshooter": {
+      "stickerid": 202
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo: The Cowboy": {
+      "stickerid": 203
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Ramp Shutdown": {
+      "stickerid": 204
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Deagle Supremacy": {
+      "stickerid": 205
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 2 Pistol Headshots": {
+      "stickerid": 206
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Triple Kill vs FaZe": {
+      "stickerid": 207
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Almost 500 Damage": {
+      "stickerid": 208
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Double Smoke Kill": {
+      "stickerid": 209
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Kobe": {
+      "stickerid": 210
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Double": {
+      "stickerid": 211
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Knife?": {
+      "stickerid": 212
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Catches Smoke": {
+      "stickerid": 213
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Fast Rotation": {
+      "stickerid": 214
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Defending Connector": {
+      "stickerid": 215
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Mid Is Karrigan": {
+      "stickerid": 216
+    },
+    "Souvenir Charm | Austin 2025 Highlight | karrigan Double Headshot": {
+      "stickerid": 217
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smokey Entry": {
+      "stickerid": 218
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mzinho Double B-Site Entry": {
+      "stickerid": 219
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mzinho Double Mirage Kill": {
+      "stickerid": 220
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clean Defense Double": {
+      "stickerid": 221
+    },
+    "Souvenir Charm | Austin 2025 Highlight | rain Double Headshot": {
+      "stickerid": 222
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 2K Dualies": {
+      "stickerid": 223
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Awareness": {
+      "stickerid": 224
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 2 Crucial Misses": {
+      "stickerid": 225
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The AWP Triple": {
+      "stickerid": 226
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Footshooter": {
+      "stickerid": 227
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The AWP Head To Head": {
+      "stickerid": 228
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Don't Bring A Knife To A Gunfight": {
+      "stickerid": 229
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu Double Entry": {
+      "stickerid": 230
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double From The Defender": {
+      "stickerid": 231
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Double B-Site Kill": {
+      "stickerid": 232
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Defender": {
+      "stickerid": 233
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Shutdown": {
+      "stickerid": 234
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Double Headshot": {
+      "stickerid": 235
+    },
+    "Souvenir Charm | Austin 2025 Highlight | EliGE: The Clutch God": {
+      "stickerid": 236
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Parkour Deagle": {
+      "stickerid": 237
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Exposed": {
+      "stickerid": 238
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Dancing Legend": {
+      "stickerid": 239
+    },
+    "Souvenir Charm | Austin 2025 Highlight | frozen Triple Kill": {
+      "stickerid": 240
+    },
+    "Souvenir Charm | Austin 2025 Highlight | frozen Double Headshot": {
+      "stickerid": 241
+    },
+    "Souvenir Charm | Austin 2025 Highlight | karrigan Double Kill": {
+      "stickerid": 242
+    },
+    "Souvenir Charm | Austin 2025 Highlight | USA USA USA": {
+      "stickerid": 243
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Running MAC-10": {
+      "stickerid": 244
+    },
+    "Souvenir Charm | Austin 2025 Highlight | karrigan Entry Fragger": {
+      "stickerid": 245
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mzinho Double Anubis Kill": {
+      "stickerid": 246
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eco Finisher": {
+      "stickerid": 247
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Chase": {
+      "stickerid": 248
+    },
+    "Souvenir Charm | Austin 2025 Highlight | rain Double Kill": {
+      "stickerid": 249
+    },
+    "Souvenir Charm | Austin 2025 Highlight | rain Triple Kill": {
+      "stickerid": 250
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Scared Of The Shotgun?": {
+      "stickerid": 251
+    },
+    "Souvenir Charm | Austin 2025 Highlight | s1mple Double AWP Kill": {
+      "stickerid": 252
+    },
+    "Souvenir Charm | Austin 2025 Highlight | s1mple Combat AWP": {
+      "stickerid": 253
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch Double Kill": {
+      "stickerid": 254
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu Triple Pistol Kill": {
+      "stickerid": 255
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Swift Double Kill": {
+      "stickerid": 256
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Triple Kill": {
+      "stickerid": 257
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Time Loss": {
+      "stickerid": 258
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Fortress": {
+      "stickerid": 259
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Double Deagle": {
+      "stickerid": 260
+    },
+    "Souvenir Charm | Austin 2025 Highlight | One Kill Is Enough": {
+      "stickerid": 261
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Double AWP Kill": {
+      "stickerid": 262
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Switcheroo": {
+      "stickerid": 263
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Triple Kill vs paiN": {
+      "stickerid": 264
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Double HS": {
+      "stickerid": 265
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dav1deus Double Mirage Kill": {
+      "stickerid": 266
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dav1deuS Almost Clutch": {
+      "stickerid": 267
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Missed A Spot": {
+      "stickerid": 268
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dav1deuS Clutch Denied": {
+      "stickerid": 269
+    },
+    "Souvenir Charm | Austin 2025 Highlight | dgt Triple Kill": {
+      "stickerid": 270
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Matrix": {
+      "stickerid": 271
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Swift Double": {
+      "stickerid": 272
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mzinho Triple Kill": {
+      "stickerid": 273
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mzinho Double A-Site Entry": {
+      "stickerid": 274
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Flying Mongolian": {
+      "stickerid": 275
+    },
+    "Souvenir Charm | Austin 2025 Highlight | No Money For You": {
+      "stickerid": 276
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Into Victory": {
+      "stickerid": 277
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz Triple Kill": {
+      "stickerid": 278
+    },
+    "Souvenir Charm | Austin 2025 Highlight | nqz AWP Rampage": {
+      "stickerid": 279
+    },
+    "Souvenir Charm | Austin 2025 Highlight | AWP Slayer": {
+      "stickerid": 280
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Instant Headshot": {
+      "stickerid": 281
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu Double Headshot": {
+      "stickerid": 282
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Berettas": {
+      "stickerid": 283
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Huggers": {
+      "stickerid": 284
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Double A-Site Kill": {
+      "stickerid": 285
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 2 In The Back": {
+      "stickerid": 286
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4k: The Cowboy vs paiN": {
+      "stickerid": 287
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Cleaning Up": {
+      "stickerid": 288
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pistols Neutralized": {
+      "stickerid": 289
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Off Target": {
+      "stickerid": 290
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Versatile Shooter": {
+      "stickerid": 291
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Brollan Closer": {
+      "stickerid": 292
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Brollan Double Deagle": {
+      "stickerid": 293
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Ace Unleashed": {
+      "stickerid": 294
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Triple Kill vs MOUZ": {
+      "stickerid": 295
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Shut Down": {
+      "stickerid": 296
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Ambush": {
+      "stickerid": 297
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Shots": {
+      "stickerid": 298
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Grenade": {
+      "stickerid": 299
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimpphat Clean Sweep": {
+      "stickerid": 300
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Ticket Takedown": {
+      "stickerid": 301
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Blocking B": {
+      "stickerid": 302
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Glock Carnage": {
+      "stickerid": 303
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Massacre": {
+      "stickerid": 304
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Cover Fire": {
+      "stickerid": 305
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Precision": {
+      "stickerid": 306
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Double Mirage Kill": {
+      "stickerid": 307
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pistol Hero": {
+      "stickerid": 308
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Tunnel Vision": {
+      "stickerid": 309
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN Double Kill": {
+      "stickerid": 310
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Deadly Deagle": {
+      "stickerid": 311
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Galil Power": {
+      "stickerid": 312
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Locked Out": {
+      "stickerid": 313
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Focused But Fallen": {
+      "stickerid": 314
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fast Double": {
+      "stickerid": 315
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Vital": {
+      "stickerid": 316
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Cheeky Boost": {
+      "stickerid": 317
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Peekaboo": {
+      "stickerid": 318
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Defender": {
+      "stickerid": 319
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Play": {
+      "stickerid": 320
+    },
+    "Souvenir Charm | Austin 2025 Highlight | No Chance": {
+      "stickerid": 321
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Running Galil": {
+      "stickerid": 322
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Double Train Kill": {
+      "stickerid": 323
+    },
+    "Souvenir Charm | Austin 2025 Highlight | One Tap": {
+      "stickerid": 324
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Just Peek Me": {
+      "stickerid": 325
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Forgot About Me?": {
+      "stickerid": 326
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Trigger Happy": {
+      "stickerid": 327
+    },
+    "Souvenir Charm | Austin 2025 Highlight | USP Masterclass": {
+      "stickerid": 328
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz Double Train Kill": {
+      "stickerid": 329
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Defender": {
+      "stickerid": 330
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Backup Is Here": {
+      "stickerid": 331
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Shutdown By HE": {
+      "stickerid": 332
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Opener": {
+      "stickerid": 333
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Failed Lurk": {
+      "stickerid": 334
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Train Triple Kill": {
+      "stickerid": 335
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Train Double Dink": {
+      "stickerid": 336
+    },
+    "Souvenir Charm | Austin 2025 Highlight | torzsi Clutch Denied": {
+      "stickerid": 337
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN: The Cowboy": {
+      "stickerid": 338
+    },
+    "Souvenir Charm | Austin 2025 Highlight | xertioN: The Train Eco Fragger": {
+      "stickerid": 339
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Double Kill": {
+      "stickerid": 340
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The AWP Double": {
+      "stickerid": 341
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo AWP Rampage": {
+      "stickerid": 342
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Dominator": {
+      "stickerid": 343
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Double Headshot": {
+      "stickerid": 344
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Strikes Back": {
+      "stickerid": 345
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Clutch Denied": {
+      "stickerid": 346
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Triple Kill vs Vitality": {
+      "stickerid": 347
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Double Kill": {
+      "stickerid": 348
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Ace": {
+      "stickerid": 349
+    },
+    "Souvenir Charm | Austin 2025 Highlight | apEX Triple Kill": {
+      "stickerid": 350
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Nade Delivery": {
+      "stickerid": 351
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Unlucky": {
+      "stickerid": 352
+    },
+    "Souvenir Charm | Austin 2025 Highlight | apEX: The Joker": {
+      "stickerid": 353
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Triple Kill vs Vitality": {
+      "stickerid": 354
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Almost The Hero": {
+      "stickerid": 355
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Double Connector Kill": {
+      "stickerid": 356
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Clutch Denied": {
+      "stickerid": 357
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Triple Kill vs MongolZ": {
+      "stickerid": 358
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Teamflash": {
+      "stickerid": 359
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Almost Clutch": {
+      "stickerid": 360
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Clutch Denied": {
+      "stickerid": 361
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Suspect": {
+      "stickerid": 362
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz: The Cowboy": {
+      "stickerid": 363
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu: The Eco Fragger - Top Mid": {
+      "stickerid": 364
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu: The Eco Fragger - Cat": {
+      "stickerid": 365
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K: The Clutch God": {
+      "stickerid": 366
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Clutch Demon": {
+      "stickerid": 367
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K: The Cowboy vs Vitality": {
+      "stickerid": 368
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Closer": {
+      "stickerid": 369
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Smoke Criminal": {
+      "stickerid": 370
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Speaker": {
+      "stickerid": 371
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Breaker": {
+      "stickerid": 372
+    },
+    "Souvenir Charm | Austin 2025 Highlight | apEX Double Kill": {
+      "stickerid": 373
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Kobes": {
+      "stickerid": 374
+    },
+    "Souvenir Charm | Austin 2025 Highlight | apEX: Help Is Here": {
+      "stickerid": 375
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Flying Frenchman": {
+      "stickerid": 376
+    },
+    "Souvenir Charm | Austin 2025 Highlight | bLitz Double Dust II Kill": {
+      "stickerid": 377
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eco Fragger": {
+      "stickerid": 378
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Double Dust II Kill": {
+      "stickerid": 379
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Dust II Retake King": {
+      "stickerid": 380
+    },
+    "Souvenir Charm | Austin 2025 Highlight | A Defender": {
+      "stickerid": 381
+    },
+    "Souvenir Charm | Austin 2025 Highlight | No Time": {
+      "stickerid": 382
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Double Dust II Kill": {
+      "stickerid": 383
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Surprise Entry": {
+      "stickerid": 384
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch Veteran": {
+      "stickerid": 385
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Closing Kills": {
+      "stickerid": 386
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fear Him": {
+      "stickerid": 387
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 180 One Tap": {
+      "stickerid": 388
+    },
+    "Souvenir Charm | Austin 2025 Highlight | The Dual Double": {
+      "stickerid": 389
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz Spray And Pray": {
+      "stickerid": 390
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz Quad Kill": {
+      "stickerid": 391
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ropz Clutch Denied": {
+      "stickerid": 392
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu: The Clutch God": {
+      "stickerid": 393
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu Clutch Denied": {
+      "stickerid": 394
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4K Almost The Hero": {
+      "stickerid": 395
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Kill Clutch": {
+      "stickerid": 396
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo: The Eco Fragger": {
+      "stickerid": 397
+    },
+    "Souvenir Charm | Austin 2025 Highlight | ZywOo Triple Kill": {
+      "stickerid": 398
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Open And Close": {
+      "stickerid": 399
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jump Spot Dodge": {
+      "stickerid": 400
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Kill Trio Delivered": {
+      "stickerid": 401
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Kill Closer": {
+      "stickerid": 402
+    },
+    "Souvenir Charm | Austin 2025 Highlight | I Believe I Can Fly": {
+      "stickerid": 403
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eco Tastes Good": {
+      "stickerid": 404
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Struggling Against Glocks": {
+      "stickerid": 405
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Right Behind You": {
+      "stickerid": 406
+    },
+    "Souvenir Charm | Austin 2025 Highlight | USP King": {
+      "stickerid": 407
+    },
+    "Souvenir Charm | Austin 2025 Highlight | One With The MP9": {
+      "stickerid": 408
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Triple Trouble": {
+      "stickerid": 409
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pre Aim": {
+      "stickerid": 410
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Eyes Open": {
+      "stickerid": 411
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Glock Down": {
+      "stickerid": 412
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Missed Shot And Missed Chance": {
+      "stickerid": 413
+    },
+    "Souvenir Charm | Austin 2025 Highlight | I Can't See": {
+      "stickerid": 414
+    },
+    "Souvenir Charm | Austin 2025 Highlight | You Can't Hide": {
+      "stickerid": 415
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch or Nothing": {
+      "stickerid": 416
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Senzu Double Deagle": {
+      "stickerid": 417
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch and Defuse": {
+      "stickerid": 418
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Glocks Taken Down": {
+      "stickerid": 419
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Duals Dominate": {
+      "stickerid": 420
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Nice Try": {
+      "stickerid": 421
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Glock Double Down": {
+      "stickerid": 422
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno4k Triple Terror": {
+      "stickerid": 423
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Duals No Damage": {
+      "stickerid": 424
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rifle Powerplay": {
+      "stickerid": 425
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sneaky Killer": {
+      "stickerid": 426
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Airborne": {
+      "stickerid": 427
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Exploit": {
+      "stickerid": 428
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rifle Control": {
+      "stickerid": 429
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Blast": {
+      "stickerid": 430
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Last Effort": {
+      "stickerid": 431
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pit Hold": {
+      "stickerid": 432
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pit Power": {
+      "stickerid": 433
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Punisher from Pit": {
+      "stickerid": 434
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Retake Master": {
+      "stickerid": 435
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Jimmy Jabs": {
+      "stickerid": 436
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rapid Fire": {
+      "stickerid": 437
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Stronghold": {
+      "stickerid": 438
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Spinx Inferno Triple Kill": {
+      "stickerid": 439
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Site Recovery": {
+      "stickerid": 440
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Sharp Shooter": {
+      "stickerid": 441
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Hidden Threat": {
+      "stickerid": 442
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Deadly Defense": {
+      "stickerid": 443
+    },
+    "Souvenir Charm | Austin 2025 Highlight | FAMAS Specialist": {
+      "stickerid": 444
+    },
+    "Souvenir Charm | Austin 2025 Highlight | torzsi Double Inferno Kill": {
+      "stickerid": 445
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Close Call": {
+      "stickerid": 446
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Lethal On Long": {
+      "stickerid": 447
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Hit or Miss": {
+      "stickerid": 448
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Tagging": {
+      "stickerid": 449
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Bombsite Battle": {
+      "stickerid": 450
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Pistol Punisher": {
+      "stickerid": 451
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Round Closer": {
+      "stickerid": 452
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Almost There": {
+      "stickerid": 453
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Striking MP9": {
+      "stickerid": 454
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rifle Rampage": {
+      "stickerid": 455
+    },
+    "Souvenir Charm | Austin 2025 Highlight | One Mag": {
+      "stickerid": 456
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Misfire": {
+      "stickerid": 457
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Striking AWP": {
+      "stickerid": 458
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Struggle": {
+      "stickerid": 459
+    },
+    "Souvenir Charm | Austin 2025 Highlight | 910 Spray and Pray": {
+      "stickerid": 460
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Kill Chain": {
+      "stickerid": 461
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Double Down": {
+      "stickerid": 462
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Kill Streak": {
+      "stickerid": 463
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Lead By Example": {
+      "stickerid": 464
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Hold Line": {
+      "stickerid": 465
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Bombsite Cleared": {
+      "stickerid": 466
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Own Fire": {
+      "stickerid": 467
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Heroic Effort": {
+      "stickerid": 468
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Boom": {
+      "stickerid": 469
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Backstabber": {
+      "stickerid": 470
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Retake Denied": {
+      "stickerid": 471
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Testing123": {
+      "stickerid": 472
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Inferno Retake King": {
+      "stickerid": 473
+    },
+    "Souvenir Charm | Austin 2025 Highlight | flameZ Almost Clutch": {
+      "stickerid": 474
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Round Here": {
+      "stickerid": 475
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Domination": {
+      "stickerid": 476
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Standing Strong": {
+      "stickerid": 477
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Boost Kill": {
+      "stickerid": 478
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Warning Shot": {
+      "stickerid": 479
+    },
+    "Souvenir Charm | Austin 2025 Highlight | mezii Clean Sweep": {
+      "stickerid": 480
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Game Changer": {
+      "stickerid": 481
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Momentum": {
+      "stickerid": 482
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Quick Kills": {
+      "stickerid": 483
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Rampage": {
+      "stickerid": 484
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Fierce Fight": {
+      "stickerid": 485
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Failed Revenge": {
+      "stickerid": 486
+    },
+    "Souvenir Charm | Austin 2025 Highlight | One Shot": {
+      "stickerid": 487
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Smoke Spray": {
+      "stickerid": 488
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Striking Shots": {
+      "stickerid": 489
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Techno Triumph": {
+      "stickerid": 490
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Timed Push": {
+      "stickerid": 491
+    },
+    "Souvenir Charm | Austin 2025 Highlight | Clutch Win": {
+      "stickerid": 492
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Natus Vincere on the QF stage": {
+      "stickerid": 493
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FURIA on the QF stage": {
+      "stickerid": 494
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful shuts Mid": {
+      "stickerid": 495
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib Underpass sweep": {
+      "stickerid": 496
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t Apartments play": {
+      "stickerid": 497
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t mid-air catch": {
+      "stickerid": 498
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t smoke breakthrough": {
+      "stickerid": 499
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM Connector burst": {
+      "stickerid": 500
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM AK massacre": {
+      "stickerid": 501
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM sick-flick": {
+      "stickerid": 502
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze B-aps stop": {
+      "stickerid": 503
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | yuurih A-site clutch": {
+      "stickerid": 504
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FURIA on Mirage": {
+      "stickerid": 505
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FURIA on Mirage": {
+      "stickerid": 506
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FURIA on Mirage": {
+      "stickerid": 507
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FURIA on Mirage": {
+      "stickerid": 508
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FURIA on Mirage": {
+      "stickerid": 509
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | YEKINDAR vs Natus Vincere on Mirage": {
+      "stickerid": 510
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | KSCERATO vs Natus Vincere on Mirage": {
+      "stickerid": 511
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN vs Natus Vincere on Mirage": {
+      "stickerid": 512
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | molodoy vs Natus Vincere on Mirage": {
+      "stickerid": 513
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | yuurih vs Natus Vincere on Mirage": {
+      "stickerid": 514
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FaZe on the QF stage": {
+      "stickerid": 515
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | MOUZ on the QF stage": {
+      "stickerid": 516
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan through fire": {
+      "stickerid": 517
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan cuts rotation": {
+      "stickerid": 518
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz smoke breaker": {
+      "stickerid": 519
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb entry force": {
+      "stickerid": 520
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen post-plant wall": {
+      "stickerid": 521
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky seals Nuke": {
+      "stickerid": 522
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spinx instant refrag": {
+      "stickerid": 523
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spinx plant pressure": {
+      "stickerid": 524
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | torzsi opening picks": {
+      "stickerid": 525
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Brollan Ramp action": {
+      "stickerid": 526
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs MOUZ on Nuke": {
+      "stickerid": 527
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs MOUZ on Nuke": {
+      "stickerid": 528
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs MOUZ on Nuke": {
+      "stickerid": 529
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs MOUZ on Nuke": {
+      "stickerid": 530
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs MOUZ on Nuke": {
+      "stickerid": 531
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Jimpphat vs FaZe on Nuke": {
+      "stickerid": 532
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Brollan vs FaZe on Nuke": {
+      "stickerid": 533
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spinx vs FaZe on Nuke": {
+      "stickerid": 534
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | torzsi vs FaZe on Nuke": {
+      "stickerid": 535
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | xertioN vs FaZe on Nuke": {
+      "stickerid": 536
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spirit on the QF stage": {
+      "stickerid": 537
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Falcons on the QF stage": {
+      "stickerid": 538
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper strikes first": {
+      "stickerid": 539
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | m0NESY defuse denial": {
+      "stickerid": 540
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro takes over": {
+      "stickerid": 541
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro B-site carnage": {
+      "stickerid": 542
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih almost aces": {
+      "stickerid": 543
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih ace": {
+      "stickerid": 544
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk opens everything": {
+      "stickerid": 545
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R smoke assassin": {
+      "stickerid": 546
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R Ramp massacre": {
+      "stickerid": 547
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyousuke Ramp wipe": {
+      "stickerid": 548
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper vs Falcons on Nuke": {
+      "stickerid": 549
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk vs Falcons on Nuke": {
+      "stickerid": 550
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih vs Falcons on Nuke": {
+      "stickerid": 551
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro vs Falcons on Nuke": {
+      "stickerid": 552
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R vs Falcons on Nuke": {
+      "stickerid": 553
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | NiKo vs Spirit on Nuke": {
+      "stickerid": 554
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyxsan vs Spirit on Nuke": {
+      "stickerid": 555
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | m0NESY vs Spirit on Nuke": {
+      "stickerid": 556
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | TeSeS vs Spirit on Nuke": {
+      "stickerid": 557
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyousuke vs Spirit on Nuke": {
+      "stickerid": 558
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality on the QF stage": {
+      "stickerid": 559
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | The MongolZ on the QF stage": {
+      "stickerid": 560
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii opening chaos": {
+      "stickerid": 561
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii Forest play": {
+      "stickerid": 562
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ mid brawl": {
+      "stickerid": 563
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ everywhere": {
+      "stickerid": 564
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo P250 madness": {
+      "stickerid": 565
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo final blow": {
+      "stickerid": 566
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Techno4K triple punch": {
+      "stickerid": 567
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | 910 solid rotation": {
+      "stickerid": 568
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs The MongolZ on Mirage": {
+      "stickerid": 569
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs The MongolZ on Mirage": {
+      "stickerid": 570
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs The MongolZ on Mirage": {
+      "stickerid": 571
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs The MongolZ on Mirage": {
+      "stickerid": 572
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs The MongolZ on Mirage": {
+      "stickerid": 573
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | bLitz vs Vitality on Mirage": {
+      "stickerid": 574
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Techno4K vs Vitality on Mirage": {
+      "stickerid": 575
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Mzinho vs Vitality on Mirage": {
+      "stickerid": 576
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | 910 vs Vitality on Mirage": {
+      "stickerid": 577
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | controlez vs Vitality on Mirage": {
+      "stickerid": 578
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful plant lockdown": {
+      "stickerid": 579
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib smoke breaker": {
+      "stickerid": 580
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t pistol shutdown": {
+      "stickerid": 581
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM nearly 1v5": {
+      "stickerid": 582
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM Short cleanup": {
+      "stickerid": 583
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | YEKINDAR Glock charge": {
+      "stickerid": 584
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | KSCERATO boost play": {
+      "stickerid": 585
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN smoke play": {
+      "stickerid": 586
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN Banana clutch": {
+      "stickerid": 587
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN captain defuse": {
+      "stickerid": 588
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | molodoy overtime quadro": {
+      "stickerid": 589
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FURIA on Inferno": {
+      "stickerid": 590
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FURIA on Inferno": {
+      "stickerid": 591
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FURIA on Inferno": {
+      "stickerid": 592
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FURIA on Inferno": {
+      "stickerid": 593
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FURIA on Inferno": {
+      "stickerid": 594
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | YEKINDAR vs Natus Vincere on Inferno": {
+      "stickerid": 595
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | KSCERATO vs Natus Vincere on Inferno": {
+      "stickerid": 596
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN vs Natus Vincere on Inferno": {
+      "stickerid": 597
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | molodoy vs Natus Vincere on Inferno": {
+      "stickerid": 598
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | yuurih vs Natus Vincere on Inferno": {
+      "stickerid": 599
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FaZe win in the QF": {
+      "stickerid": 600
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky mid-air magic": {
+      "stickerid": 601
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky Boiler cleanup": {
+      "stickerid": 602
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky post-plant fury": {
+      "stickerid": 603
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Banana snap": {
+      "stickerid": 604
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan nade finish": {
+      "stickerid": 605
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | torzsi Tec-9 rampage": {
+      "stickerid": 606
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz dual chaos": {
+      "stickerid": 607
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | xertioN clutch win": {
+      "stickerid": 608
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs MOUZ on Inferno": {
+      "stickerid": 609
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Brollan vs FaZe on Inferno": {
+      "stickerid": 610
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs MOUZ on Inferno": {
+      "stickerid": 611
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs MOUZ on Inferno": {
+      "stickerid": 612
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Jimpphat vs FaZe on Inferno": {
+      "stickerid": 613
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs MOUZ on Inferno": {
+      "stickerid": 614
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spinx vs FaZe on Inferno": {
+      "stickerid": 615
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | torzsi vs FaZe on Inferno": {
+      "stickerid": 616
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs MOUZ on Inferno": {
+      "stickerid": 617
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | xertioN vs FaZe on Inferno": {
+      "stickerid": 618
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spirit win in the QF": {
+      "stickerid": 619
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper A-site havoc": {
+      "stickerid": 620
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk quad eruption": {
+      "stickerid": 621
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyousuke smoke punish": {
+      "stickerid": 622
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | m0NESY momentum swing": {
+      "stickerid": 623
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro mid-air shutdown": {
+      "stickerid": 624
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro multi-action swing": {
+      "stickerid": 625
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | TeSeS site purge": {
+      "stickerid": 626
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R Gandalf spray": {
+      "stickerid": 627
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih flawless ace": {
+      "stickerid": 628
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih B-site fortress": {
+      "stickerid": 629
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper vs Falcons on Dust II": {
+      "stickerid": 630
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk vs Falcons on Dust II": {
+      "stickerid": 631
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyousuke vs Spirit on Dust II": {
+      "stickerid": 632
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | kyxsan vs Spirit on Dust II": {
+      "stickerid": 633
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | m0NESY vs Spirit on Dust II": {
+      "stickerid": 634
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | NiKo vs Spirit on Dust II": {
+      "stickerid": 635
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro vs Falcons on Dust II": {
+      "stickerid": 636
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | TeSeS vs Spirit on Dust II": {
+      "stickerid": 637
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R vs Falcons on Dust II": {
+      "stickerid": 638
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih vs Falcons on Dust II": {
+      "stickerid": 639
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality win in the QF": {
+      "stickerid": 640
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | 910 MP9 mayhem": {
+      "stickerid": 641
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii B-site burst": {
+      "stickerid": 642
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii mid takeover": {
+      "stickerid": 643
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Mzinho Long control": {
+      "stickerid": 644
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Mzinho clears Short": {
+      "stickerid": 645
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Mzinho mid surprise": {
+      "stickerid": 646
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz 1v3 clutch": {
+      "stickerid": 647
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz pistol precision": {
+      "stickerid": 648
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo triple finish": {
+      "stickerid": 649
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | 910 vs Vitality on Dust II": {
+      "stickerid": 650
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs The MongolZ on Dust II": {
+      "stickerid": 651
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | bLitz vs Vitality on Dust II": {
+      "stickerid": 652
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | controlez vs Vitality on Dust II": {
+      "stickerid": 653
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs The MongolZ on Dust II": {
+      "stickerid": 654
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs The MongolZ on Dust II": {
+      "stickerid": 655
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Mzinho vs Vitality on Dust II": {
+      "stickerid": 656
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs The MongolZ on Dust II": {
+      "stickerid": 657
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Techno4K vs Vitality on Dust II": {
+      "stickerid": 658
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs The MongolZ on Dust II": {
+      "stickerid": 659
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Natus Vincere win in the QF": {
+      "stickerid": 660
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful smoke criminal": {
+      "stickerid": 661
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib post-plant triple": {
+      "stickerid": 662
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t B-site ambush": {
+      "stickerid": 663
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze flash cleanup": {
+      "stickerid": 664
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze Ivy disruption": {
+      "stickerid": 665
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze pistol precision": {
+      "stickerid": 666
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze fury unleashed": {
+      "stickerid": 667
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | KSCERATO A play": {
+      "stickerid": 668
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN late-half triple": {
+      "stickerid": 669
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FURIA on Train": {
+      "stickerid": 670
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FURIA on Train": {
+      "stickerid": 671
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FURIA on Train": {
+      "stickerid": 672
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FURIA on Train": {
+      "stickerid": 673
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FURIA on Train": {
+      "stickerid": 674
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | YEKINDAR vs Natus Vincere on Train": {
+      "stickerid": 675
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | KSCERATO vs Natus Vincere on Train": {
+      "stickerid": 676
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FalleN vs Natus Vincere on Train": {
+      "stickerid": 677
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | molodoy vs Natus Vincere on Train": {
+      "stickerid": 678
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | yuurih vs Natus Vincere on Train": {
+      "stickerid": 679
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Natus Vincere on the SF stage": {
+      "stickerid": 680
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FaZe on the SF stage": {
+      "stickerid": 681
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib smoke read spray": {
+      "stickerid": 682
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t B-site stand": {
+      "stickerid": 683
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM USP-S quad threat": {
+      "stickerid": 684
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb Redroom sweep": {
+      "stickerid": 685
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan smoke double": {
+      "stickerid": 686
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze A-plant entry": {
+      "stickerid": 687
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze Mid wide swing": {
+      "stickerid": 688
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze Redroom transfer": {
+      "stickerid": 689
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful Mid to A punish": {
+      "stickerid": 690
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful A-site triple": {
+      "stickerid": 691
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FaZe on Ancient": {
+      "stickerid": 692
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FaZe on Ancient": {
+      "stickerid": 693
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FaZe on Ancient": {
+      "stickerid": 694
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FaZe on Ancient": {
+      "stickerid": 695
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FaZe on Ancient": {
+      "stickerid": 696
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Natus Vincere on Ancient": {
+      "stickerid": 697
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Natus Vincere on Ancient": {
+      "stickerid": 698
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Natus Vincere on Ancient": {
+      "stickerid": 699
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Natus Vincere on Ancient": {
+      "stickerid": 700
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Natus Vincere on Ancient": {
+      "stickerid": 701
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Spirit on the SF stage": {
+      "stickerid": 702
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality on the SF stage": {
+      "stickerid": 703
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX overtime closer": {
+      "stickerid": 704
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper calm 1v3": {
+      "stickerid": 705
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk smoke burst": {
+      "stickerid": 706
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk Mid takeover": {
+      "stickerid": 707
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii B-aps shutdown": {
+      "stickerid": 708
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii perfect read": {
+      "stickerid": 709
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz round flip": {
+      "stickerid": 710
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R Firebox gamble": {
+      "stickerid": 711
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R finishing double": {
+      "stickerid": 712
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo Short play": {
+      "stickerid": 713
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs Spirit on Mirage": {
+      "stickerid": 714
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper vs Vitality on Mirage": {
+      "stickerid": 715
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk vs Vitality on Mirage": {
+      "stickerid": 716
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs Spirit on Mirage": {
+      "stickerid": 717
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs Spirit on Mirage": {
+      "stickerid": 718
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs Spirit on Mirage": {
+      "stickerid": 719
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro vs Vitality on Mirage": {
+      "stickerid": 720
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R vs Vitality on Mirage": {
+      "stickerid": 721
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih vs Vitality on Mirage": {
+      "stickerid": 722
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs Spirit on Mirage": {
+      "stickerid": 723
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful long-range triple": {
+      "stickerid": 724
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t Outside to B stop": {
+      "stickerid": 725
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM pistol quad": {
+      "stickerid": 726
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM rotation payoff": {
+      "stickerid": 727
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan Main entry triple": {
+      "stickerid": 728
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky A-site equalizer": {
+      "stickerid": 729
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz Ramp bomb hold": {
+      "stickerid": 730
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Ramp triple": {
+      "stickerid": 731
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen backstab cleanup": {
+      "stickerid": 732
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FaZe on Nuke": {
+      "stickerid": 733
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FaZe on Nuke": {
+      "stickerid": 734
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FaZe on Nuke": {
+      "stickerid": 735
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FaZe on Nuke": {
+      "stickerid": 736
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FaZe on Nuke": {
+      "stickerid": 737
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Natus Vincere on Nuke": {
+      "stickerid": 738
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Natus Vincere on Nuke": {
+      "stickerid": 739
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Natus Vincere on Nuke": {
+      "stickerid": 740
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Natus Vincere on Nuke": {
+      "stickerid": 741
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Natus Vincere on Nuke": {
+      "stickerid": 742
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality wins in the SF": {
+      "stickerid": 743
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk door-to-AWP rampage": {
+      "stickerid": 744
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih tunnels opener": {
+      "stickerid": 745
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R doors to B plant": {
+      "stickerid": 746
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo pistol round burst": {
+      "stickerid": 747
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo smoke stumble": {
+      "stickerid": 748
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX early double": {
+      "stickerid": 749
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX A-site lockdown": {
+      "stickerid": 750
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX Long dance": {
+      "stickerid": 751
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ map closer": {
+      "stickerid": 752
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz smoke pick": {
+      "stickerid": 753
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | chopper vs Vitality on Dust II": {
+      "stickerid": 754
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | donk vs Vitality on Dust II": {
+      "stickerid": 755
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | zweih vs Vitality on Dust II": {
+      "stickerid": 756
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | sh1ro vs Vitality on Dust II": {
+      "stickerid": 757
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | tN1R vs Vitality on Dust II": {
+      "stickerid": 758
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs Spirit on Dust II": {
+      "stickerid": 759
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs Spirit on Dust II": {
+      "stickerid": 760
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs Spirit on Dust II": {
+      "stickerid": 761
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs Spirit on Dust II": {
+      "stickerid": 762
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs Spirit on Dust II": {
+      "stickerid": 763
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FaZe win in the SF": {
+      "stickerid": 764
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful post-plant hold": {
+      "stickerid": 765
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib CT lockdown": {
+      "stickerid": 766
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t Triple timing quad": {
+      "stickerid": 767
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t last-second defuse": {
+      "stickerid": 768
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan pistol headshots": {
+      "stickerid": 769
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky Triple surprise": {
+      "stickerid": 770
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz Banana to CT swing": {
+      "stickerid": 771
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz Deagle quad": {
+      "stickerid": 772
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb A-site spraydown": {
+      "stickerid": 773
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Banana opener": {
+      "stickerid": 774
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | w0nderful vs FaZe on Inferno": {
+      "stickerid": 775
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Aleksib vs FaZe on Inferno": {
+      "stickerid": 776
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | b1t vs FaZe on Inferno": {
+      "stickerid": 777
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | iM vs FaZe on Inferno": {
+      "stickerid": 778
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | makazze vs FaZe on Inferno": {
+      "stickerid": 779
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Natus Vincere on Inferno": {
+      "stickerid": 780
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Natus Vincere on Inferno": {
+      "stickerid": 781
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Natus Vincere on Inferno": {
+      "stickerid": 782
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Natus Vincere on Inferno": {
+      "stickerid": 783
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Natus Vincere on Inferno": {
+      "stickerid": 784
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality on the GF stage": {
+      "stickerid": 785
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | FaZe on the GF stage": {
+      "stickerid": 786
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX smoke gap": {
+      "stickerid": 787
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ Squeaky triple": {
+      "stickerid": 788
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb USP-S triple": {
+      "stickerid": 789
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan rotation triple": {
+      "stickerid": 790
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan Lobby MP9": {
+      "stickerid": 791
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii post-plant": {
+      "stickerid": 792
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz Heaven double": {
+      "stickerid": 793
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz Secret quad": {
+      "stickerid": 794
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz pistol triple": {
+      "stickerid": 795
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz Garage triple": {
+      "stickerid": 796
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs FaZe on Nuke": {
+      "stickerid": 797
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Vitality on Nuke": {
+      "stickerid": 798
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs FaZe on Nuke": {
+      "stickerid": 799
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Vitality on Nuke": {
+      "stickerid": 800
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Vitality on Nuke": {
+      "stickerid": 801
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Vitality on Nuke": {
+      "stickerid": 802
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs FaZe on Nuke": {
+      "stickerid": 803
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs FaZe on Nuke": {
+      "stickerid": 804
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Vitality on Nuke": {
+      "stickerid": 805
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs FaZe on Nuke": {
+      "stickerid": 806
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo Long pistol wall": {
+      "stickerid": 807
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii CT clutch": {
+      "stickerid": 808
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ post-plant sweep": {
+      "stickerid": 809
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz Tunnel trap": {
+      "stickerid": 810
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky duel to triple": {
+      "stickerid": 811
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky Doors closer": {
+      "stickerid": 812
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky Scout showcase": {
+      "stickerid": 813
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz smoke timing": {
+      "stickerid": 814
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Upper Tunnel sweep": {
+      "stickerid": 815
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen B-site burst": {
+      "stickerid": 816
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs FaZe on Dust II": {
+      "stickerid": 817
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs FaZe on Dust II": {
+      "stickerid": 818
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs FaZe on Dust II": {
+      "stickerid": 819
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs FaZe on Dust II": {
+      "stickerid": 820
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs FaZe on Dust II": {
+      "stickerid": 821
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Vitality on Dust II": {
+      "stickerid": 822
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Vitality on Dust II": {
+      "stickerid": 823
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Vitality on Dust II": {
+      "stickerid": 824
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Vitality on Dust II": {
+      "stickerid": 825
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Vitality on Dust II": {
+      "stickerid": 826
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo Construction spray": {
+      "stickerid": 827
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii Boost timing": {
+      "stickerid": 828
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz crossfire triple": {
+      "stickerid": 829
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz Pit triple": {
+      "stickerid": 830
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky A-site opener": {
+      "stickerid": 831
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky lineup save": {
+      "stickerid": 832
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Banana nade": {
+      "stickerid": 833
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen Banana rush": {
+      "stickerid": 834
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs FaZe on Inferno": {
+      "stickerid": 835
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs FaZe on Inferno": {
+      "stickerid": 836
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs FaZe on Inferno": {
+      "stickerid": 837
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs FaZe on Inferno": {
+      "stickerid": 838
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs FaZe on Inferno": {
+      "stickerid": 839
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Vitality on Inferno": {
+      "stickerid": 840
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Vitality on Inferno": {
+      "stickerid": 841
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Vitality on Inferno": {
+      "stickerid": 842
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Vitality on Inferno": {
+      "stickerid": 843
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Vitality on Inferno": {
+      "stickerid": 844
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Vitality win in the GF": {
+      "stickerid": 845
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo all angles": {
+      "stickerid": 846
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo smoke Deagle": {
+      "stickerid": 847
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii Connector triple": {
+      "stickerid": 848
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ Short to B": {
+      "stickerid": 849
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz pistol quadro": {
+      "stickerid": 850
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz Bank post-plant": {
+      "stickerid": 851
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz A-site AWP": {
+      "stickerid": 852
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX B-site triple": {
+      "stickerid": 853
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen A triple": {
+      "stickerid": 854
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ZywOo vs FaZe on Overpass": {
+      "stickerid": 855
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | apEX vs FaZe on Overpass": {
+      "stickerid": 856
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | mezii vs FaZe on Overpass": {
+      "stickerid": 857
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | flameZ vs FaZe on Overpass": {
+      "stickerid": 858
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | ropz vs FaZe on Overpass": {
+      "stickerid": 859
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | karrigan vs Vitality on Overpass": {
+      "stickerid": 860
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | broky vs Vitality on Overpass": {
+      "stickerid": 861
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz vs Vitality on Overpass": {
+      "stickerid": 862
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | jcobbb vs Vitality on Overpass": {
+      "stickerid": 863
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | frozen vs Vitality on Overpass": {
+      "stickerid": 864
+    },
+    "Souvenir Charm | Budapest 2025 Highlight | Twistzz breaks the streak": {
+      "stickerid": 865
+    }
+  }
+}
